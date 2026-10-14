@@ -19,6 +19,7 @@ export function IdeaCard({ candidate: c, expanded, onToggle }: IdeaCardProps) {
     lang === "bn" ? fieldBn(c.id, "financialProblem", c.financialProblem) : c.financialProblem;
   return (
     <article
+      id={`card-${c.id}`}
       className={`rounded-xl border transition-colors ${
         c.prototypeValidation
           ? "border-accent-500/40 bg-gradient-to-b from-accent-500/[0.04] to-transparent"

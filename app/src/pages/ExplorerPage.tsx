@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { TOP_SHORTLIST } from "../data";
 import { IdeaCard } from "../components/IdeaCard";
+import { TopTenBoard } from "../components/TopTenBoard";
 import { SectionHeader } from "../components/Cards";
 import { useLang } from "../components/LanguageContext";
 import { fieldBn } from "../i18n/fieldHelpers";
@@ -51,6 +52,21 @@ export function ExplorerPage() {
         eyebrow={t("explorer.tier1Title")}
         title={t("nav.explorer")}
         subtitle={t("explorer.tier1Subtitle")}
+      />
+      <TopTenBoard
+        candidates={TOP_SHORTLIST}
+        onSelect={(id) => {
+          setFilter("all");
+          setQuery("");
+          setExpandedId(id);
+          setTimeout(
+            () =>
+              document
+                .getElementById(`card-${id}`)
+                ?.scrollIntoView({ behavior: "smooth", block: "start" }),
+            50
+          );
+        }}
       />
       <Controls filter={filter} setFilter={setFilter} query={query} setQuery={setQuery} lang={lang} t={t} />
       <div className="space-y-3">
