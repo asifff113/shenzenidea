@@ -1,0 +1,583 @@
+{
+  "snapshot": "2026-10-14",
+  "shortlist": [
+    {
+      "id": "HYBRID-008",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "CONDITIONAL PASS",
+      "change_status": "NEW HYBRID"
+    },
+    {
+      "id": "IDEA-073",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "PASS (prototype-eligible)",
+      "change_status": "NEW (split from IDEA-002)"
+    },
+    {
+      "id": "IDEA-001",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "PASS (prototype-eligible; organizer network caveat shared by all)",
+      "change_status": "EXPANDED"
+    },
+    {
+      "id": "HYBRID-002R",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "CONDITIONAL PASS",
+      "change_status": "REVISED"
+    },
+    {
+      "id": "HYBRID-009",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "CONDITIONAL PASS (only if X1 and X5 both pass by 15 Oct)",
+      "change_status": "NEW HYBRID (source-backed)"
+    },
+    {
+      "id": "IDEA-033",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "CONDITIONAL PASS",
+      "change_status": "UNCHANGED"
+    },
+    {
+      "id": "HYBRID-001",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "FAIL this round (scope and unaudited trusted code)",
+      "change_status": "REVISED GATE"
+    },
+    {
+      "id": "HYBRID-003",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "FAIL this round; research reserve",
+      "change_status": "RELABELLED"
+    },
+    {
+      "id": "IDEA-074",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "CONDITIONAL PASS as HYBRID-008 stretch only",
+      "change_status": "NEW (split from IDEA-002; overlaps IDEA-013)"
+    },
+    {
+      "id": "IDEA-081",
+      "present": true,
+      "missing_fields": [],
+      "populated": 19,
+      "total": 19,
+      "gate": "FAIL this round (unavailable dependency)",
+      "change_status": "NEW (restored from IDEA-003/019)"
+    }
+  ],
+  "catalogue": [
+    {
+      "id": "IDEA-001",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-002",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-003",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-004",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-005",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-006",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-007",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-008",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-009",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-010",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-011",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-012",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-013",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-014",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-015",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-016",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-017",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-018",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-019",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-020",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-021",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-022",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-023",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-024",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-025",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-026",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-027",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-028",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-029",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-030",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-031",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-032",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-033",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-034",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-035",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-036",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-037",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-038",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-039",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-040",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-041",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-042",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-043",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-044",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-045",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-046",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-047",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-048",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-049",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-050",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-051",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-052",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-053",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-054",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-055",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-056",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-057",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-058",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-059",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-060",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-061",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-062",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-063",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-064",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-065",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-066",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-067",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-068",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-069",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-070",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-071",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-072",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-073",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-074",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-075",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-076",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-077",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-078",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-079",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-080",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-081",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-082",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-083",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-084",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-085",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "IDEA-086",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-001",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-002",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-002R",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-003",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-004",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-005",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-006",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-007",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-008",
+      "missing": [],
+      "populated": 19
+    },
+    {
+      "id": "HYBRID-009",
+      "missing": [],
+      "populated": 19
+    }
+  ],
+  "summary": {
+    "fully_populated": 96,
+    "partially_populated": 0,
+    "empty": 0,
+    "total_records": 96
+  }
+}

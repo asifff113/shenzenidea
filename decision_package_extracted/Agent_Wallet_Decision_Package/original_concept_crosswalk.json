@@ -1,0 +1,3400 @@
+[
+  {
+    "report": "R001",
+    "original_slot": "F01",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-002"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Obligation reserve treasury"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00159",
+    "source_heading_or_excerpt": "| **F01 Covenant CFO Wallet** | SME/DAO has invoices, payroll reserve and subscriptions competing for limited liquidity | AI extracts obligations, forecasts, schedules and explains; deterministic engine authorizes exact payments | Stablecoin transfer + escrow; recipient/amount/time/contract caps; us"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F02",
+    "normalized_ids": [
+      "IDEA-003"
+    ],
+    "names": [
+      "Objective milestone escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00160",
+    "source_heading_or_excerpt": "| **F02 Milestone Invoice Escrow** | Buyer wants AI to manage milestone supplier/freelancer payments | AI interprets deliverables/evidence; deterministic state machine controls funds | ERC-8183-style escrow, evaluator quorum, refund timeout | ERC-8183/Kite are close; differentiation would need parti"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F03",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-021"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00161",
+    "source_heading_or_excerpt": "| **F03 Payroll Buffer Guardian** | SME needs payroll protected while other bills arrive | AI forecasts cash need and payment timing; reserve floor is deterministic | Separate reserved spending capability; batch payroll | Generic treasury + payment agents | Show vendor bill refused because it would "
+  },
+  {
+    "report": "R001",
+    "original_slot": "F04",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00162",
+    "source_heading_or_excerpt": "| **F04 Subscription Sovereign** | User/company has autonomous SaaS/API subscriptions | AI monitors utility and renegotiates/cancels; policies cap spend | x402 or periodic stablecoin payment; vendor/time cap | Nevermined/Skyfire/Circle close | Demonstrate continue/cancel/reprice decisions; **L–M**, "
+  },
+  {
+    "report": "R001",
+    "original_slot": "F05",
+    "normalized_ids": [
+      "IDEA-005"
+    ],
+    "names": [
+      "RFQ procurement scout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00163",
+    "source_heading_or_excerpt": "| **F05 Procurement Scout** | Small firm repeatedly procures standardized supplies/services | AI discovers vendors and chooses quote; deterministic budget/merchant policy | Escrow/direct payment after quote acceptance | Kite/AP2/UCP close | Three vendors + policy-bound purchase; **M**, crowded |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F06",
+    "normalized_ids": [
+      "IDEA-006",
+      "IDEA-019"
+    ],
+    "names": [
+      "Metered service buyer",
+      "Outcome-gated purchase"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00164",
+    "source_heading_or_excerpt": "| **F06 SLA Compute Buyer** | AI application buys model/API/compute dynamically | Agent benchmarks quality/cost and routes spend | x402 payments, service budget, SLA receipt | Circle/Nevermined/Skyfire | Innovation would be outcome-based spend optimization; **M** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F07",
+    "normalized_ids": [
+      "IDEA-007"
+    ],
+    "names": [
+      "Data provenance buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00165",
+    "source_heading_or_excerpt": "| **F07 Data Provenance Buyer** | Research/financial agent pays only for verifiable data | Agent selects source by quality/provenance | Conditional payment after signed data/proof | Agent-commerce protocols | Demo two data vendors and reject poisoned/unverifiable source; **M–H** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F08",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-004"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Subjective dispute arbiter"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00166",
+    "source_heading_or_excerpt": "| **F08 Freelancer Fair-Pay Wallet** | Freelancer and client need automatic milestone settlement | AI maps work artifacts to contract terms; deterministic escrow | Escrow, partial payment, dispute window | ERC-8183 direct prior art | Requires unusually good evidence adjudication to differentiate; **"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F09",
+    "normalized_ids": [
+      "IDEA-008"
+    ],
+    "names": [
+      "Conditional grant steward"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00167",
+    "source_heading_or_excerpt": "| **F09 Grant Steward** | Foundation distributes conditional grants | AI monitors milestone evidence/budget; human defines grant covenant | Escrow/release/refund, public hashes | Generic escrow | Strong social story; subjective oracle risk; **M** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F10",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00168",
+    "source_heading_or_excerpt": "| **F10 Sentinel Incident Wallet** | Wallet owner needs emergency response to compromised approvals/accounts | AI detects anomaly; deterministic emergency authority only permits revoke/freeze or transfer to precommitted safe | Approval revocation, pause, rescue-to-fixed-safe | Security automation ex"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F11",
+    "normalized_ids": [
+      "IDEA-010"
+    ],
+    "names": [
+      "Approval hygiene"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00169",
+    "source_heading_or_excerpt": "| **F11 Approval Hygiene Agent** | Users accumulate dangerous token approvals | AI assesses stale/excess privileges | Revoke/reduce approvals only; cannot transfer to arbitrary recipients | Wallet security products | Very safe loss bound but narrower financial narrative; **L–M** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F12",
+    "normalized_ids": [
+      "IDEA-011"
+    ],
+    "names": [
+      "Exact-intent execution firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00170",
+    "source_heading_or_excerpt": "| **F12 Intent Firewall Wallet** | Any user needs protection from address/amount/calldata substitution | AI translates intent; trusted compiler creates executable constraint | Simulation + state-delta matching + protected signer | AP2 + policy engines | Attack-focused demo; **M**, strong security bu"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F13",
+    "normalized_ids": [
+      "IDEA-012"
+    ],
+    "names": [
+      "Trusted beneficiary registry"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00171",
+    "source_heading_or_excerpt": "| **F13 Verified Recipient Wallet** | SME worries invoice fraud changes bank/wallet destination | AI reconciles invoice/vendor history; deterministic directory controls address | Pay only identity-bound destination; new address escalates | AP2 / enterprise AP fraud controls | Excellent malicious-inv"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F14",
+    "normalized_ids": [
+      "IDEA-013"
+    ],
+    "names": [
+      "Surplus yield allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00172",
+    "source_heading_or_excerpt": "| **F14 Treasury Buffer Allocator** | DAO/SME wants idle surplus used without jeopardizing liabilities | AI estimates true surplus; hard reserve protects obligations | Only surplus sleeve may enter allowlisted vault | DeFi treasury tools | Obligation-aware separation is key; **M–H** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F15",
+    "normalized_ids": [
+      "IDEA-014"
+    ],
+    "names": [
+      "Collateral rescue"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00173",
+    "source_heading_or_excerpt": "| **F15 Collateral Rescue Wallet** | Borrower risks DeFi liquidation | AI monitors position and chooses repay/add collateral | Only allowlisted lending actions under cap | Existing DeFi bots | Useful but crowded; oracle/market risk; **H** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F16",
+    "normalized_ids": [
+      "IDEA-015"
+    ],
+    "names": [
+      "Risk-capped DeFi allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00174",
+    "source_heading_or_excerpt": "| **F16 Permissioned DeFi Allocator** | Treasury wants bounded yield/risk optimization | AI ranks allowlisted vaults | Smart-account session limited to protocols/assets and exposure | AgentKit/Circle/DeFi agents | Weak novelty unless combined with liabilities; **H** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F17",
+    "normalized_ids": [
+      "IDEA-016",
+      "IDEA-027"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher",
+      "Gas and fee keeper"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00175",
+    "source_heading_or_excerpt": "| **F17 Cross-Chain Fee Treasurer** | Agent operations need balances/gas across chains | AI predicts gas/liquidity demand | Bridge/rebalance with hard per-chain caps | Existing cross-chain automation | Bridge security makes this poor MVP; **H** citeturn19academia50 |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F18",
+    "normalized_ids": [
+      "IDEA-017"
+    ],
+    "names": [
+      "DAO contributor payout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00176",
+    "source_heading_or_excerpt": "| **F18 DAO Contributor Wallet** | DAO compensates contributors based on approved work | AI matches approved deliverables to budget | Scheduled/batch token payments, escrow | DAO payroll tools + ERC-8183 | Need contribution-verification novelty; **M** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F19",
+    "normalized_ids": [
+      "IDEA-018"
+    ],
+    "names": [
+      "Agent service marketplace"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00177",
+    "source_heading_or_excerpt": "| **F19 Machine Service Broker** | One AI hires specialized agents/tools | AI decomposes task, solicits bids and allocates budget | Agent-to-agent escrow/micropayments | Virtuals ACP, ERC-8183, Circle Marketplace | Impressive but highly crowded; **M–H** |"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F20",
+    "normalized_ids": [
+      "IDEA-019"
+    ],
+    "names": [
+      "Outcome-gated purchase"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00178",
+    "source_heading_or_excerpt": "| **F20 Proof-of-Outcome Buyer** | Buyer wants payment only when digital-service result passes objective test | AI finds providers and evaluates candidate outputs; deterministic oracle/test gates release | Escrow with objective test-hash/attestation | ERC-8183 evaluator role | Differentiation requir"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F21",
+    "normalized_ids": [
+      "IDEA-020"
+    ],
+    "names": [
+      "Private policy proof"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00179",
+    "source_heading_or_excerpt": "| **F21 Privacy-Preserving Policy Wallet** | Enterprise wants spending policy enforced without public policy disclosure | AI plans; zero-knowledge/policy-verdict proof gates execution | Confidential policy verdict concept, single-use nullifier | ERC-8354 directly relevant | Frontier research demo; *"
+  },
+  {
+    "report": "R001",
+    "original_slot": "F22",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-018"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Agent service marketplace"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00180",
+    "source_heading_or_excerpt": "| **F22 Solvency-Aware Agent Marketplace Wallet** | AI agent buys services but must preserve future budget for mandatory commitments | AI chooses services conditional on future liabilities | x402 + obligation-reserved budget + mandate | Nevermined/Circle + F01 | Strong hybrid: machine commerce with "
+  },
+  {
+    "report": "R002",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-001"
+    ],
+    "names": [
+      "Bounded invoice payout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00640",
+    "source_heading_or_excerpt": "C1 | PayGuard AP | Invoice-to-settlement agent that can only pay registered vendors within metered allowances | SME / DAO | Parse invoice, match obligation, schedule | VendorRegistry + Roles (EqualTo registered address, WithinAllowance) + Delay | Registers vendors; vetoes slow lane | Zodiac AI guide"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-013"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Surplus yield allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00641",
+    "source_heading_or_excerpt": "C2 | Runway Autopilot | Obligation-aware treasury that keeps a liquidity buffer and parks surplus in one allowlisted vault | SME / DAO treasury | Forecast obligations, decide sweep size | Roles: deposit/withdraw only, recipient = Safe | Sets buffer policy | Karpatkey DeFi Kit, vault curators | Payab"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-004"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Subjective dispute arbiter"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00642",
+    "source_heading_or_excerpt": "C3 | Milestone Escrow Arbiter | ERC-8183-style escrow where the AI drafts an evidence assessment, but release needs evaluator quorum or a timeout | Freelancers | Assess deliverables against spec | Escrow state machine, expiry refunds | Client/evaluator sign | Virtuals ACP, ERC-8183 | AI as evidence "
+  },
+  {
+    "report": "R002",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00643",
+    "source_heading_or_excerpt": "C4 | x402 Budget Steward | Per-task budgeted agent buying data/APIs via x402, with price-sanity checks and receipt reconciliation | Agent developers | Pick services, justify spend | Spend caps, idempotency keys | Sets task budget | Coinbase Agentic Wallet, AgentCore | Request-bound receipts (mitigat"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-011"
+    ],
+    "names": [
+      "Exact-intent execution firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00644",
+    "source_heading_or_excerpt": "C5 | Intent Firewall | Pre-sign verifier that decodes and simulates any agent transaction against a signed mandate hash | Any agent builder | Explain diff to the human | Calldata decode, simulation, mandate match | Signs mandate | Wallet simulators, AP2 | Mandate-to-calldata binding for agents | M"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00645",
+    "source_heading_or_excerpt": "C6 | Defensive-Only Sentinel | Agent with authority only to revoke approvals and sweep funds to a pre-set vault | Retail / DAO | Detect threats, choose response | Roles limited to approve(…,0) and transfer → vault | Pre-authorizes vault; reviews | Revoke tools, Forta-style monitors | Asymmetric \"def"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00646",
+    "source_heading_or_excerpt": "C7 | Subscription Sentinel | Manages ERC-7715 periodic permissions; cancels unused services | Retail | Usage analysis | Periodic caveats | Approves new subscriptions | MetaMask Advanced Permissions | Low | L"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-008"
+    ],
+    "names": [
+      "Conditional grant steward"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00647",
+    "source_heading_or_excerpt": "C8 | Grant Tranche Disburser | Releases grant tranches on verified milestones | Foundations | Evidence review | Tranche contract | Committee quorum | Gitcoin-style tools | Low-medium | M"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-021"
+    ],
+    "names": [
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00648",
+    "source_heading_or_excerpt": "C9 | Payroll Streamer | Computes variable pay; opens streams | DAOs | Pay calculation | Sablier/Superfluid | Approves the pay run | Request Network, Superfluid | Low | M"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00649",
+    "source_heading_or_excerpt": "C10 | Cross-chain Rebalancer | Moves USDC via CCTP to meet obligations on each chain | Multichain treasury | Routing | CCTP calls | Thresholds | Circle Gateway | Low; bridge risk | H"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-014"
+    ],
+    "names": [
+      "Collateral rescue"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00650",
+    "source_heading_or_excerpt": "C11 | Liquidation Guardian | Repay-only deleveraging when health factor falls | DeFi users | Choose repay size | Roles: repay only | Sets triggers | DeFi Saver-style automation | Low | M-H"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-005",
+      "IDEA-018"
+    ],
+    "names": [
+      "RFQ procurement scout",
+      "Agent service marketplace"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00651",
+    "source_heading_or_excerpt": "C12 | A2A Procurement Broker | RFQ across agents, escrowed purchase | Agent operators | Compare quotes | Escrow + ERC-8004 lookups | Budget | Virtuals ACP | Low-medium | H"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-031"
+    ],
+    "names": [
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00652",
+    "source_heading_or_excerpt": "C13 | Decision Ledger | Anchors a hash of each plan, policy evaluation and simulation on-chain | All | Generate rationale | Event log / Merkle root | — | AP2 receipts | Medium as add-on | L"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-028"
+    ],
+    "names": [
+      "Family allowance wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00653",
+    "source_heading_or_excerpt": "C14 | Family Allowance Wallet | Guardian-set allowances with scam screening | Families | Scam detection | Smart-account limits | Guardian | Bank parental controls | Low | M"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-030"
+    ],
+    "names": [
+      "Governance-to-execution agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00654",
+    "source_heading_or_excerpt": "C15 | DAO Proposal Executor | Converts passed proposal text into calldata; executes within role | DAOs | Text → calldata | Roles + Delay | Governance vote | Zodiac Pilot, Safe | Medium; high error risk | H"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C16",
+    "normalized_ids": [
+      "IDEA-029"
+    ],
+    "names": [
+      "Student tuition and stipend wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00655",
+    "source_heading_or_excerpt": "C16 | Tuition / Remittance Router | Stablecoin tuition payment routing | Students | Route choice | Transfers | Student approves | Topic C entrants | Low; off-ramp regulation | M"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-023"
+    ],
+    "names": [
+      "Reconciliation agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00656",
+    "source_heading_or_excerpt": "C17 | Reconciliation Auditor | Read-only agent that flags duplicates and anomalies | Finance teams | Matching | Read-only | — | Accounting software | Low; no execution | L"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-024"
+    ],
+    "names": [
+      "Agent credit wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00657",
+    "source_heading_or_excerpt": "C18 | Agent Credit Line | Agent borrows against collateral for working capital | Agents | Credit decisions | Lending protocol | Limits | Lending protocols | High risk | H"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-025"
+    ],
+    "names": [
+      "Natural-language policy compiler"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00658",
+    "source_heading_or_excerpt": "C19 | Policy Compiler | NL policy → Zodiac Roles config diff, test-simulated, human-signed | Treasury ops | Compile and explain | Roles SDK, fork tests | Signs config | Zodiac Pilot recording, roles.wei links | Medium | M"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-022"
+    ],
+    "names": [
+      "Parametric claims wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00659",
+    "source_heading_or_excerpt": "C20 | Parametric Payout Agent | Oracle-triggered micro-insurance payouts | Insurers | Evidence interpretation | Oracle contract | Underwriter | Parametric insurance protocols | Low; overlaps Topic D | H"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C21",
+    "normalized_ids": [
+      "IDEA-032"
+    ],
+    "names": [
+      "Adversarial wallet benchmark"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00660",
+    "source_heading_or_excerpt": "C21 | Bounded-Loss Red-Team Arena | Public challenge: attackers try to inject the agent; the on-chain limits cap the prize at a known maximum | Judges, community | Run the target agent | Roles caps; prize = allowance | — | Freysa (inverse design) | Medium-high as demo | M"
+  },
+  {
+    "report": "R002",
+    "original_slot": "C22",
+    "normalized_ids": [
+      "IDEA-027"
+    ],
+    "names": [
+      "Gas and fee keeper"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L00661",
+    "source_heading_or_excerpt": "C22 | Gas Keeper | Tops up agent fleet gas | Agent ops | Forecast | Transfers | — | Cron jobs | None | L"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-002"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Obligation reserve treasury"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01195",
+    "source_heading_or_excerpt": "C1. ObligationGuard"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-011",
+      "IDEA-031"
+    ],
+    "names": [
+      "Exact-intent execution firewall",
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01205",
+    "source_heading_or_excerpt": "C2. IntentChain Wallet"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01214",
+    "source_heading_or_excerpt": "C3. Incident Sentinel"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-004"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Subjective dispute arbiter"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01222",
+    "source_heading_or_excerpt": "C4. Milestone Escrow Judge"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-005"
+    ],
+    "names": [
+      "RFQ procurement scout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01228",
+    "source_heading_or_excerpt": "C5. Autonomous Procurement Wallet"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-002"
+    ],
+    "names": [
+      "Obligation reserve treasury"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01234",
+    "source_heading_or_excerpt": "C6. Liquidity Calendar Agent"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-008",
+      "IDEA-019"
+    ],
+    "names": [
+      "Conditional grant steward",
+      "Outcome-gated purchase"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01239",
+    "source_heading_or_excerpt": "C7. Proof-of-Delivery Disbursement Wallet"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01244",
+    "source_heading_or_excerpt": "C8. Agent Service Budget Passport"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-033"
+    ],
+    "names": [
+      "Original-payer refund governor"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01249",
+    "source_heading_or_excerpt": "C9. Refund Governor"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-010"
+    ],
+    "names": [
+      "Approval hygiene"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01253",
+    "source_heading_or_excerpt": "C10. Allowance Hygiene Agent"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-014"
+    ],
+    "names": [
+      "Collateral rescue"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01259",
+    "source_heading_or_excerpt": "C11. Collateral Rescue Agent"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01264",
+    "source_heading_or_excerpt": "C12. Cross-Chain Obligation Router"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-017"
+    ],
+    "names": [
+      "DAO contributor payout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01269",
+    "source_heading_or_excerpt": "C13. DAO Contributor Payroll Guardian"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01274",
+    "source_heading_or_excerpt": "C14. Subscription Autopilot"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-012"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Trusted beneficiary registry"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01278",
+    "source_heading_or_excerpt": "C15. Invoice Fraud Firewall"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C16",
+    "normalized_ids": [
+      "IDEA-034"
+    ],
+    "names": [
+      "Multi-agent treasury committee"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01284",
+    "source_heading_or_excerpt": "C16. Multi-Agent Treasury Committee"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-023"
+    ],
+    "names": [
+      "Reconciliation agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01289",
+    "source_heading_or_excerpt": "C17. Autonomous Reconciliation Wallet"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-025"
+    ],
+    "names": [
+      "Natural-language policy compiler"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01295",
+    "source_heading_or_excerpt": "C18. Policy Compiler Wallet"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-026"
+    ],
+    "names": [
+      "Conditional loss certificate"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01301",
+    "source_heading_or_excerpt": "C19. Insurance-Like Loss-Bounded Agent Wallet"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-021"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01306",
+    "source_heading_or_excerpt": "C20. Conditional Payroll Reserve"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C21",
+    "normalized_ids": [
+      "IDEA-035"
+    ],
+    "names": [
+      "Two-sided work bond"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01311",
+    "source_heading_or_excerpt": "C21. Agent-to-Agent Work Bond"
+  },
+  {
+    "report": "R003",
+    "original_slot": "C22",
+    "normalized_ids": [
+      "IDEA-020",
+      "IDEA-059"
+    ],
+    "names": [
+      "Private policy proof",
+      "Compliance policy firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01316",
+    "source_heading_or_excerpt": "C22. Privacy-Preserving Compliance Wallet"
+  },
+  {
+    "report": "R004",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-064"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Approval ladder and preauthorization split"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01947",
+    "source_heading_or_excerpt": "**C01 – MandateEscrow Agent**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01951",
+    "source_heading_or_excerpt": "**C02 – PolicyBounded Micropay Agent** (x402-native service payer)  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-064"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Approval ladder and preauthorization split"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01952",
+    "source_heading_or_excerpt": "**C03 – TreasuryGuard** (DAO/SME routine ops with multi-sig escalation)  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-008"
+    ],
+    "names": [
+      "Conditional grant steward"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01953",
+    "source_heading_or_excerpt": "**C04 – ConditionalGrant Disburser**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-058"
+    ],
+    "names": [
+      "Agent identity and reputation passport"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01954",
+    "source_heading_or_excerpt": "**C05 – AgentIdentity + Reputation Wallet** (ERC-8004 native)  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01955",
+    "source_heading_or_excerpt": "**C06 – IncidentResponse Wallet** (auto-freeze + recovery)  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01956",
+    "source_heading_or_excerpt": "**C07 – CrossChain Liquidity Planner**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01957",
+    "source_heading_or_excerpt": "**C08 – Subscription Lifecycle Agent**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-001"
+    ],
+    "names": [
+      "Bounded invoice payout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01958",
+    "source_heading_or_excerpt": "**C09 – InvoiceMatch & Pay**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-034",
+      "IDEA-050"
+    ],
+    "names": [
+      "Multi-agent treasury committee",
+      "Hierarchical sub-agent budget"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01959",
+    "source_heading_or_excerpt": "**C10 – Multi-Agent Shared Treasury Coordinator**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-018",
+      "IDEA-031"
+    ],
+    "names": [
+      "Agent service marketplace",
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01960",
+    "source_heading_or_excerpt": "**C11 – Verifiable Receipt Commerce Agent**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-015"
+    ],
+    "names": [
+      "Risk-capped DeFi allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01961",
+    "source_heading_or_excerpt": "**C12 – Risk-Capped Position Maintainer** (non-trading)  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-020",
+      "IDEA-031"
+    ],
+    "names": [
+      "Private policy proof",
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01962",
+    "source_heading_or_excerpt": "**C13 – Privacy-Preserving Spend Reporter**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-070"
+    ],
+    "names": [
+      "Physical-delivery escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01963",
+    "source_heading_or_excerpt": "**C14 – Oracle-Conditioned Physical Delivery Escrow**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-005",
+      "IDEA-027"
+    ],
+    "names": [
+      "RFQ procurement scout",
+      "Gas and fee keeper"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01964",
+    "source_heading_or_excerpt": "**C15 – Gas-Aware Autonomous Procurement**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C16",
+    "normalized_ids": [
+      "IDEA-026",
+      "IDEA-037"
+    ],
+    "names": [
+      "Conditional loss certificate",
+      "Policy conformance kernel"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01965",
+    "source_heading_or_excerpt": "**C16 – Formal-Policy Verified Agent** (policy-as-code + formal checks)  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-069"
+    ],
+    "names": [
+      "Ephemeral session wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01966",
+    "source_heading_or_excerpt": "**C17 – Session-Key Only Ephemeral Agent**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-064"
+    ],
+    "names": [
+      "Approval ladder and preauthorization split"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01967",
+    "source_heading_or_excerpt": "**C18 – Hybrid Human-AI Approval Ladder**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-005",
+      "IDEA-018",
+      "IDEA-053"
+    ],
+    "names": [
+      "RFQ procurement scout",
+      "Agent service marketplace",
+      "Intent route executor"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01968",
+    "source_heading_or_excerpt": "**C19 – On-Chain Intent Marketplace Participant**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-040"
+    ],
+    "names": [
+      "Self-funding compute wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01969",
+    "source_heading_or_excerpt": "**C20 – Self-Funding Compute Agent** (pays for its own inference via x402)  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C21",
+    "normalized_ids": [
+      "IDEA-031"
+    ],
+    "names": [
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01970",
+    "source_heading_or_excerpt": "**C21 – Audit-First Immutable Ledger Agent**  "
+  },
+  {
+    "report": "R004",
+    "original_slot": "C22",
+    "normalized_ids": [
+      "IDEA-067"
+    ],
+    "names": [
+      "Owner recovery wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L01971",
+    "source_heading_or_excerpt": "**C22 – Recovery-Oriented Design Agent** (focus on post-compromise safety)"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept01",
+    "normalized_ids": [
+      "IDEA-011"
+    ],
+    "names": [
+      "Exact-intent execution firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02196",
+    "source_heading_or_excerpt": "### Concept 1: \"PolicyGuard\" — On-Chain Policy-Enforced Agent Wallet"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept02",
+    "normalized_ids": [
+      "IDEA-031"
+    ],
+    "names": [
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02219",
+    "source_heading_or_excerpt": "### Concept 2: \"IntentLedger\" — Verifiable Intent with On-Chain Proof"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept03",
+    "normalized_ids": [
+      "IDEA-003"
+    ],
+    "names": [
+      "Objective milestone escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02242",
+    "source_heading_or_excerpt": "### Concept 3: \"EscrowAgent\" — Conditional Milestone Payments"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept04",
+    "normalized_ids": [
+      "IDEA-034"
+    ],
+    "names": [
+      "Multi-agent treasury committee"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02265",
+    "source_heading_or_excerpt": "### Concept 4: \"TreasurySwarm\" — Multi-Agent DAO Treasury Management"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept05",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02288",
+    "source_heading_or_excerpt": "### Concept 5: \"MicroPay\" — API/Data/Compute Micropayments"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept06",
+    "normalized_ids": [
+      "IDEA-059"
+    ],
+    "names": [
+      "Compliance policy firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02311",
+    "source_heading_or_excerpt": "### Concept 6: \"Governor\" — AI Financial Governance and Compliance"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept07",
+    "normalized_ids": [
+      "IDEA-041"
+    ],
+    "names": [
+      "Inheritance and dead-man wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02334",
+    "source_heading_or_excerpt": "### Concept 7: \"Inheritor\" — Programmable Estate Planning"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept08",
+    "normalized_ids": [
+      "IDEA-004"
+    ],
+    "names": [
+      "Subjective dispute arbiter"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02357",
+    "source_heading_or_excerpt": "### Concept 8: \"Arbiter\" — AI Dispute Resolution for Agent Commerce"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept09",
+    "normalized_ids": [
+      "IDEA-042"
+    ],
+    "names": [
+      "Carbon offset purchaser"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02380",
+    "source_heading_or_excerpt": "### Concept 9: \"CarbonAgent\" — Automated Carbon Credit Retirement"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept10",
+    "normalized_ids": [
+      "IDEA-021"
+    ],
+    "names": [
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02403",
+    "source_heading_or_excerpt": "### Concept 10: \"PayrollBot\" — Autonomous Payroll for SMEs"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept11",
+    "normalized_ids": [
+      "IDEA-008"
+    ],
+    "names": [
+      "Conditional grant steward"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02426",
+    "source_heading_or_excerpt": "### Concept 11: \"GrantFlow\" — Milestone-Based Grant Disbursement"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept12",
+    "normalized_ids": [
+      "IDEA-022"
+    ],
+    "names": [
+      "Parametric claims wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02449",
+    "source_heading_or_excerpt": "### Concept 12: \"InsuranceBot\" — Parametric Insurance Payouts"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept13",
+    "normalized_ids": [
+      "IDEA-058"
+    ],
+    "names": [
+      "Agent identity and reputation passport"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02472",
+    "source_heading_or_excerpt": "### Concept 13: \"AgentRep\" — On-Chain Agent Reputation System"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept14",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02495",
+    "source_heading_or_excerpt": "### Concept 14: \"EmergencyStop\" — Autonomous Wallet Incident Response"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept15",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02518",
+    "source_heading_or_excerpt": "### Concept 15: \"CrossChainTreasury\" — Unified Multi-Chain Treasury Management"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept16",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02541",
+    "source_heading_or_excerpt": "### Concept 16: \"SubscriptionManager\" — AI-Optimized Subscription Management"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept17",
+    "normalized_ids": [
+      "IDEA-043"
+    ],
+    "names": [
+      "Invoice factoring wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02564",
+    "source_heading_or_excerpt": "### Concept 17: \"InvoiceFactor\" — AI-Powered Invoice Financing"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept18",
+    "normalized_ids": [
+      "IDEA-017"
+    ],
+    "names": [
+      "DAO contributor payout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02587",
+    "source_heading_or_excerpt": "### Concept 18: \"DAOpay\" — Automated DAO Contributor Payments"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept19",
+    "normalized_ids": [
+      "IDEA-044"
+    ],
+    "names": [
+      "Green bond proceeds agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02610",
+    "source_heading_or_excerpt": "### Concept 19: \"GreenBond\" — AI-Managed Green Bond Issuance"
+  },
+  {
+    "report": "R005",
+    "original_slot": "Concept20",
+    "normalized_ids": [
+      "IDEA-018",
+      "IDEA-003"
+    ],
+    "names": [
+      "Agent service marketplace",
+      "Objective milestone escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L02633",
+    "source_heading_or_excerpt": "### Concept 20: \"AgentEscrow\" — Universal Agent Escrow Protocol"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-021",
+      "IDEA-056"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Streaming payroll",
+      "Performance-adjusted streaming"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-019"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Outcome-gated purchase"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-013"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Surplus yield allocator"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-011",
+      "IDEA-047"
+    ],
+    "names": [
+      "Exact-intent execution firewall",
+      "Contract-analysis agent"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-036",
+      "IDEA-058"
+    ],
+    "names": [
+      "Counterparty fallback wallet",
+      "Agent identity and reputation passport"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-022",
+      "IDEA-039"
+    ],
+    "names": [
+      "Parametric claims wallet",
+      "Welfare disbursement and return"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-056",
+      "IDEA-057"
+    ],
+    "names": [
+      "Performance-adjusted streaming",
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-015"
+    ],
+    "names": [
+      "Risk-capped DeFi allocator"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-054"
+    ],
+    "names": [
+      "Maritime demurrage reconciler"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-034",
+      "IDEA-048"
+    ],
+    "names": [
+      "Multi-agent treasury committee",
+      "Prompt and memory scanner"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-043"
+    ],
+    "names": [
+      "Invoice factoring wallet"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-030"
+    ],
+    "names": [
+      "Governance-to-execution agent"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-008",
+      "IDEA-070"
+    ],
+    "names": [
+      "Conditional grant steward",
+      "Physical-delivery escrow"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-055"
+    ],
+    "names": [
+      "Bug-bounty proof payout"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-042"
+    ],
+    "names": [
+      "Carbon offset purchaser"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-009",
+      "IDEA-067"
+    ],
+    "names": [
+      "Defensive incident agent",
+      "Owner recovery wallet"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-025",
+      "IDEA-011"
+    ],
+    "names": [
+      "Natural-language policy compiler",
+      "Exact-intent execution firewall"
+    ],
+    "note": "Original numbered concept slot; damaged source; C02 fragmented, C17 name missing, C16 absent",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R007",
+    "original_slot": "summary 1",
+    "normalized_ids": [
+      "IDEA-011",
+      "IDEA-031",
+      "IDEA-006",
+      "IDEA-003"
+    ],
+    "names": [
+      "Exact-intent execution firewall",
+      "Decision and receipt ledger",
+      "Metered service buyer",
+      "Objective milestone escrow"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number",
+    "source_anchor": "L03240",
+    "source_heading_or_excerpt": "Recommendation: AEGIS — a permission-tiered, evidence-first agent wallet: an AI planner emitting typed intents → deterministic on-chain-enforced policy tiers (Safe + ERC-7579 session-validation modules, so a compromised LLM can't overrule them) → simulation → execution → EAS-attested Policy Decision"
+  },
+  {
+    "report": "R008",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-070"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Physical-delivery escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03300",
+    "source_heading_or_excerpt": "**Concept 1: \"GlobalPay Agent\" - Autonomous Cross-Border B2B Payment Executor**"
+  },
+  {
+    "report": "R008",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03322",
+    "source_heading_or_excerpt": "**Concept 2: \"x402 Broker\" - Intent-Based Microservices Marketplace**"
+  },
+  {
+    "report": "R008",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-059",
+      "IDEA-009"
+    ],
+    "names": [
+      "Compliance policy firewall",
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03344",
+    "source_heading_or_excerpt": "**Concept 3: \"Guardian\" - Enterprise Treasury Governance Agent**"
+  },
+  {
+    "report": "R008",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-022"
+    ],
+    "names": [
+      "Parametric claims wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03366",
+    "source_heading_or_excerpt": "**Concept 4: \"ClaimFlow\" - Automated Insurance Claims Processor**"
+  },
+  {
+    "report": "R008",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-013",
+      "IDEA-015"
+    ],
+    "names": [
+      "Surplus yield allocator",
+      "Risk-capped DeFi allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03388",
+    "source_heading_or_excerpt": "**Concept 5: \"DeFi Yield Guardian\" - Risk-Limited Portfolio Rebalancer**"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-01",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03587",
+    "source_heading_or_excerpt": "| **C-01** | **AutoSubs** | AI agent that automatically cancels unused subscriptions | Consumers | $21B wasted annually on unused subscriptions 【turn0search31】 | Medium | Low |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-02",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-005"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "RFQ procurement scout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03588",
+    "source_heading_or_excerpt": "| **C-02** | **FreelanceFlow** | Instant cross-border payment settlement for freelancers | Freelancers, SMEs | 3-7 day payment delays, 5-10% fees | High | Medium |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-03",
+    "normalized_ids": [
+      "IDEA-005",
+      "IDEA-070"
+    ],
+    "names": [
+      "RFQ procurement scout",
+      "Physical-delivery escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03589",
+    "source_heading_or_excerpt": "| **C-03** | **SupplyChainAgent** | Autonomous procurement with budget limits | SMEs | Manual PO approval delays | High | Medium |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-04",
+    "normalized_ids": [
+      "IDEA-068"
+    ],
+    "names": [
+      "Isolated signing and MPC control"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03590",
+    "source_heading_or_excerpt": "| **C-04** | **MPCGuard** | Agent wallet using MPC for key management | Institutional/High-value | Single point of failure in key management | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-05",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-070"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Physical-delivery escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03591",
+    "source_heading_or_excerpt": "| **C-05** | **ConditionalEscrow** | Smart escrow that releases on delivery verification | SMEs, freelancers | Trust issues in remote transactions | High | Medium |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-06",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03592",
+    "source_heading_or_excerpt": "| **C-06** | **CrossChainOptimizer** | AI that automatically rebalances across chains | DeFi users | Manual portfolio management across 10+ chains | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-07",
+    "normalized_ids": [
+      "IDEA-062"
+    ],
+    "names": [
+      "Prediction-market trader"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03593",
+    "source_heading_or_excerpt": "| **C-07** | **PredictionMarketBot** | AI agent for prediction market arbitrage | Sophisticated traders | Manual monitoring of 20+ markets | Medium | Medium |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-08",
+    "normalized_ids": [
+      "IDEA-063"
+    ],
+    "names": [
+      "Liquidity forecasting assistant"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03594",
+    "source_heading_or_excerpt": "| **C-08** | **SME CashFlow Oracle** | Predictive cash flow management for SMEs | SMEs | Cash flow surprises causing insolvency | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-09",
+    "normalized_ids": [
+      "IDEA-034",
+      "IDEA-002"
+    ],
+    "names": [
+      "Multi-agent treasury committee",
+      "Obligation reserve treasury"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03595",
+    "source_heading_or_excerpt": "| **C-09** | **AgentTreasury** | Multi-agent DAO treasury management | DAOs | Slow, centralized treasury operations | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-10",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03596",
+    "source_heading_or_excerpt": "| **C-10** | **APIPay** | Pay-per-use API billing for AI agents | AI developers | Manual API key management | High | Low |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-11",
+    "normalized_ids": [
+      "IDEA-059"
+    ],
+    "names": [
+      "Compliance policy firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03597",
+    "source_heading_or_excerpt": "| **C-11** | **ComplianceGuard** | Agent with built-in regulatory compliance | Financial institutions | Manual compliance checks | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-12",
+    "normalized_ids": [
+      "IDEA-015"
+    ],
+    "names": [
+      "Risk-capped DeFi allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03598",
+    "source_heading_or_excerpt": "| **C-12** | **RiskBalancer** | Automated DeFi risk rebalancing | DeFi users | Emotional/irrational decisions during volatility | Medium | Medium |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-13",
+    "normalized_ids": [
+      "IDEA-005"
+    ],
+    "names": [
+      "RFQ procurement scout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03599",
+    "source_heading_or_excerpt": "| **C-13** | **AgentProcurement** | Autonomous B2B procurement with supplier negotiation | SMEs, enterprises | Manual RFQ processes taking weeks | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-14",
+    "normalized_ids": [
+      "IDEA-001"
+    ],
+    "names": [
+      "Bounded invoice payout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03600",
+    "source_heading_or_excerpt": "| **C-14** | **SmartInvoice** | Self-executing invoices with on-chain verification | Freelancers, SMEs | Manual invoice tracking, disputes | High | Medium |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-15",
+    "normalized_ids": [
+      "IDEA-022"
+    ],
+    "names": [
+      "Parametric claims wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03601",
+    "source_heading_or_excerpt": "| **C-15** | **AgentInsurance** | Parametric insurance claims automation | Insurance holders | Manual claims processing taking weeks | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-16",
+    "normalized_ids": [
+      "IDEA-060"
+    ],
+    "names": [
+      "Agent wallet service platform"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03602",
+    "source_heading_or_excerpt": "| **C-16** | **AgentWallet-as-a-Service** | Infrastructure for building custom agent wallets | Developers | Complex wallet infrastructure | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-17",
+    "normalized_ids": [
+      "IDEA-021"
+    ],
+    "names": [
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03603",
+    "source_heading_or_excerpt": "| **C-17** | **AgentPayroll** | Automated payroll for global remote teams | SMEs, remote companies | Manual payroll processing across jurisdictions | High | Medium |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-18",
+    "normalized_ids": [
+      "IDEA-046"
+    ],
+    "names": [
+      "Just-in-time liquidity wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03604",
+    "source_heading_or_excerpt": "| **C-18** | **AgentLiquidity** | Just-in-time liquidity for DeFi protocols | DeFi protocols | Inefficient capital allocation | Medium | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-19",
+    "normalized_ids": [
+      "IDEA-047"
+    ],
+    "names": [
+      "Contract-analysis agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03605",
+    "source_heading_or_excerpt": "| **C-19** | **AgentAudit** | Automated smart contract security auditing | Developers, auditors | Manual security audits taking weeks | High | High |"
+  },
+  {
+    "report": "R009",
+    "original_slot": "C-20",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03606",
+    "source_heading_or_excerpt": "| **C-20** | **AgentBridge** | Cross-chain asset bridge with agent optimization | Cross-chain users | Manual bridge selection, high fees | High | High |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-011",
+      "IDEA-001",
+      "IDEA-032"
+    ],
+    "names": [
+      "Exact-intent execution firewall",
+      "Bounded invoice payout",
+      "Adversarial wallet benchmark"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03998",
+    "source_heading_or_excerpt": "| C1 | Bounded-Authority Payment Agent | An agent pays verified invoices under contract-enforced scope, with every decision attested on-chain and every attack published | PACE [22], Crossmint [11], ERC-7579 [20] | Mechanism is prior art; **the published adversarial record is not** | Simulation and p"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-012"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Trusted beneficiary registry"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L03999",
+    "source_heading_or_excerpt": "| C2 | Invoice Interceptor | An AP agent that reads untrusted supplier documents and must prove, cryptographically, that the payee and amount came from a trusted channel and not from the document | Barracuda [43], InjecAgent [44] | **Defensible**: no inspected product separates document content from"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-019"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Outcome-gated purchase"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04000",
+    "source_heading_or_excerpt": "| C3 | Attestation-Gated Escrow | Milestone escrow where release requires both a verification verdict and a verified counterparty attestation | Intelligent AI Delegation reference implementation [50], Trustless Work [46] | Weak as escrow; stronger if the **attestation gate** is the novelty | A verif"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-064",
+      "IDEA-011"
+    ],
+    "names": [
+      "Approval ladder and preauthorization split",
+      "Exact-intent execution firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04001",
+    "source_heading_or_excerpt": "| C4 | Mandate-Enforced Wallet | AP2-style signed mandates issued by a human, enforced by a smart account rather than by a merchant | AP2 [48][49], ZeroDev permissions [19] | Combination is undemonstrated in production; individually both exist | Mandate issuance UX does not require a human per trans"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-011",
+      "IDEA-068"
+    ],
+    "names": [
+      "Exact-intent execution firewall",
+      "Isolated signing and MPC control"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04002",
+    "source_heading_or_excerpt": "| C5 | Simulation-Gated Signer | Every operation is simulated and diffed against the LLM's stated intent; a mismatch blocks signing | Tenderly simulation [41][42], PACE [22] | Moderate: simulation exists, **intent-diff gating does not** | Simulation is fast and accurate enough to sit in the critical"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-034"
+    ],
+    "names": [
+      "Multi-agent treasury committee"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04003",
+    "source_heading_or_excerpt": "| C6 | Two-Brain Treasury | A proposer agent drafts operations, an independent verifier agent challenges them, and a human threshold releases | Turnkey consensus policies [13], recursive oversight patterns | Weak as architecture; the differentiator would be the on-chain record of disagreement | A ve"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-002"
+    ],
+    "names": [
+      "Obligation reserve treasury"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04004",
+    "source_heading_or_excerpt": "| C7 | Budget Envelope Treasury | Per-cost-center spending envelopes with period resets, enforced in the account contract | Safe allowance module [16][17] | Weak alone; strong with recipient restriction, which Safe explicitly lacks [17] | Envelope accounting survives concurrency without reentrancy |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04005",
+    "source_heading_or_excerpt": "| C8 | Self-Limiting Incident Agent | The agent detects its own anomalous behaviour and revokes its own authority on-chain | None found in inspected commercial products | **Defensible**: no inspected product markets self-revocation | The agent can be trusted to detect its own compromise, which is a "
+  },
+  {
+    "report": "R010",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-059"
+    ],
+    "names": [
+      "Compliance policy firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04006",
+    "source_heading_or_excerpt": "| C9 | Compliance Firewall | Sanctions and counterparty screening evaluated before every transfer, with the verdict attested on-chain | Circle OFAC screening [12], Coinbase KYT [8] | Weak as screening; moderate as **attested verdict** | Screening is available and legally usable in the demo jurisdict"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-002"
+    ],
+    "names": [
+      "Obligation reserve treasury"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04007",
+    "source_heading_or_excerpt": "| C10 | Recurring Obligation Agent | Autonomous subscriptions with hard cancellation authority and a per-merchant cap | MetaMask Agent Wallet [14] | Weak | Merchants accept stablecoin |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04008",
+    "source_heading_or_excerpt": "| C11 | Cross-Chain Replenishment | Maintains a liquidity buffer across chains, moving only within a total-value-at-risk budget | Circle CCTP [12] | Weak as treasury logic; moderate as bounded autonomous rebalancing | Bridge risk is acceptable for the amounts involved |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-021"
+    ],
+    "names": [
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04009",
+    "source_heading_or_excerpt": "| C12 | Vesting Payroll Agent | Streaming payroll with conditional clawback | Superfluid streaming [28], Trustless Work [46] | Weak | Tax and employment treatment permits it |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-005"
+    ],
+    "names": [
+      "RFQ procurement scout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04010",
+    "source_heading_or_excerpt": "| C13 | Procurement Agent | RFQ to multiple vendors, policy-bound award, payment on acceptance | Trustless Work [46] | Weak | Vendors participate |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-038"
+    ],
+    "names": [
+      "Repayment waterfall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04011",
+    "source_heading_or_excerpt": "| C14 | Repayment Waterfall Agent | Prioritizes debt repayment by rate and deadline under a fixed budget | DeFi position management [7] | Weak; saturated | Nothing — which is the problem |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-036"
+    ],
+    "names": [
+      "Counterparty fallback wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04012",
+    "source_heading_or_excerpt": "| C15 | Counterparty Registry With Fallbacks | Agent identity on-chain, but trust decisions fall back to a signed behavioural record when the registry is unusable | ERC-8004 [46], empirical study [47] | **Defensible**: [47] shows the registry is not a trust signal, so a fallback is a real design res"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C16",
+    "normalized_ids": [
+      "IDEA-006",
+      "IDEA-057"
+    ],
+    "names": [
+      "Metered service buyer",
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04013",
+    "source_heading_or_excerpt": "| C16 | Micro-Subscription Compute Desk | Budgeted autonomous purchasing of inference and data with hard caps | x402 ecosystem [34] | Weak; the market is thin [29][35] | Real volume materialises |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-008",
+      "IDEA-019"
+    ],
+    "names": [
+      "Conditional grant steward",
+      "Outcome-gated purchase"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04014",
+    "source_heading_or_excerpt": "| C17 | Outcome-Conditioned Grant Agent | Tranched disbursement released against verified milestones with clawback | Aragon-style streaming vesting, Chainlink [52] | Weak | Milestone evidence is machine-verifiable |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-064"
+    ],
+    "names": [
+      "Approval ladder and preauthorization split"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04015",
+    "source_heading_or_excerpt": "| C18 | Human-Not-Present Mandate Wallet | Implements AP2 v0.2 semantics entirely on-chain, with the mandate verified by a contract rather than a merchant | AP2 v0.2 [48] | **Defensible as an on-chain implementation of a spec that is currently merchant-side only** | Mandate format does not change |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-064"
+    ],
+    "names": [
+      "Approval ladder and preauthorization split"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04016",
+    "source_heading_or_excerpt": "| C19 | Approval-Budget Split | A fixed fraction of spend may go without approval, the remainder requires a human, decided by a published schedule | MetaMask Guard mode 2FA [14], Turnkey consensus [13] | Weak as mechanism; the published **schedule** is a nice demo artefact | Judges read it as autono"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-031"
+    ],
+    "names": [
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04017",
+    "source_heading_or_excerpt": "| C20 | Intent Ledger with Replay Proofs | Every LLM decision recorded as a signed intent with a nonce and expiry, so replays are provably impossible | PACE replay protection [22] | Weak; prior art | A distinct nonce source |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C21",
+    "normalized_ids": [
+      "IDEA-037"
+    ],
+    "names": [
+      "Policy conformance kernel"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04018",
+    "source_heading_or_excerpt": "| C21 | Chain-Agnostic Policy Kernel | One policy definition deployed identically across EVM chains, with a compiler and a conformance test suite | ERC-7579 portability [21] | Moderate: conformance testing is the undemonstrated part | Chains remain sufficiently similar |"
+  },
+  {
+    "report": "R010",
+    "original_slot": "C22",
+    "normalized_ids": [
+      "IDEA-039"
+    ],
+    "names": [
+      "Welfare disbursement and return"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04019",
+    "source_heading_or_excerpt": "| C22 | Welfare-Bounded Disbursement | Philanthropic funds released only under programmatic conditions, with an unspent-return rule | Trustless Work [46] | Moderate if the conditions are genuinely programmatic | Conditions can be expressed as contract predicates |"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-011"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Exact-intent execution firewall"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04433",
+    "source_heading_or_excerpt": "#### CONCEPT 1: IBEW – Intent-Bound Escrow Wallet (Top Candidate)"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-070"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Physical-delivery escrow"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04456",
+    "source_heading_or_excerpt": "#### CONCEPT 2: SME Cash-Flow Guardian (Safe Implementable)"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04464",
+    "source_heading_or_excerpt": "#### CONCEPT 3: Subscription Governor with AP2 Mandates"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-031"
+    ],
+    "names": [
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04467",
+    "source_heading_or_excerpt": "#### CONCEPT 4: Verifiable Audit Ledger (EU AI Act)"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04470",
+    "source_heading_or_excerpt": "#### CONCEPT 5: Incident Response Wallet"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-011",
+      "IDEA-048"
+    ],
+    "names": [
+      "Exact-intent execution firewall",
+      "Prompt and memory scanner"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04473",
+    "source_heading_or_excerpt": "#### CONCEPT 6: Intent-Verified Payment Agent (Synthesis Trust)"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-061"
+    ],
+    "names": [
+      "Privacy bridge wallet"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04476",
+    "source_heading_or_excerpt": "#### CONCEPT 7: Privacy-Preserving ZEC Bridge (High-risk)"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-021"
+    ],
+    "names": [
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04479",
+    "source_heading_or_excerpt": "#### CONCEPT 8: Autonomous Payroll Streamer"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-027",
+      "IDEA-016"
+    ],
+    "names": [
+      "Gas and fee keeper",
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04481",
+    "source_heading_or_excerpt": "#### CONCEPT 9-22 abbreviated distinct:"
+  },
+  {
+    "report": "R011",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-045"
+    ],
+    "names": [
+      "Tax-loss harvesting agent"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04483",
+    "source_heading_or_excerpt": "10. **Tax-Optimized Harvester**: Realizes losses autonomously within caps."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-015"
+    ],
+    "names": [
+      "Risk-capped DeFi allocator"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04484",
+    "source_heading_or_excerpt": "11. **DeFi Risk-Limited Router**: Session key caps per DEX, USDC approve cap."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-058"
+    ],
+    "names": [
+      "Agent identity and reputation passport"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04485",
+    "source_heading_or_excerpt": "12. **Agent-to-Agent Reputation Passport**: Kite three-level identity + verifiable receipts."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-012"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Trusted beneficiary registry"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04486",
+    "source_heading_or_excerpt": "13. **Fraud-Resilient Invoice Parser**: Blockaid token metadata warning – token metadata can expose agents."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-035"
+    ],
+    "names": [
+      "Two-sided work bond"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04487",
+    "source_heading_or_excerpt": "14. **Multi-Agent Coordination with Symmetric Staking**: Agent escrow with staking to prevent frivolous disputes."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-002"
+    ],
+    "names": [
+      "Obligation reserve treasury"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04488",
+    "source_heading_or_excerpt": "15. **Budget Envelope System**: Envelopes per task, hard cap, session token cached 60s."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C16",
+    "normalized_ids": [
+      "IDEA-022"
+    ],
+    "names": [
+      "Parametric claims wallet"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04489",
+    "source_heading_or_excerpt": "16. **Decentralized Insurance Claim**: Explainable AI decisions hash on Monad."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04490",
+    "source_heading_or_excerpt": "17. **GPU Procurement Agent**: Tempo demos autonomous compute procurement."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-048"
+    ],
+    "names": [
+      "Prompt and memory scanner"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04491",
+    "source_heading_or_excerpt": "18. **Moltbook Defense Agent**: SentinelPrompt scanning untrusted content before LLM."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-063"
+    ],
+    "names": [
+      "Liquidity forecasting assistant"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04492",
+    "source_heading_or_excerpt": "19. **Liquidity Forecaster**: Obligation planning, burn-rate enforcement."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-008",
+      "IDEA-039"
+    ],
+    "names": [
+      "Conditional grant steward",
+      "Welfare disbursement and return"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04493",
+    "source_heading_or_excerpt": "20. **Philanthropy Disbursement**: Conditional release on oracle verified impact."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C21",
+    "normalized_ids": [
+      "IDEA-029"
+    ],
+    "names": [
+      "Student tuition and stipend wallet"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04494",
+    "source_heading_or_excerpt": "21. **Student Finance Assistant**: Cross-border tuition with nanopayments."
+  },
+  {
+    "report": "R011",
+    "original_slot": "C22",
+    "normalized_ids": [
+      "IDEA-032",
+      "IDEA-047"
+    ],
+    "names": [
+      "Adversarial wallet benchmark",
+      "Contract-analysis agent"
+    ],
+    "note": "Original numbered concept slot; use original CONCEPT numbering; later machine summary renumbers some entries inconsistently",
+    "source_anchor": "L04495",
+    "source_heading_or_excerpt": "22. **On-Chain Exploration Bonus Hunter**: Analyzes transaction traces for MEV, anomaly detection – directly targets 0-5 bonus."
+  },
+  {
+    "report": "R012",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-001"
+    ],
+    "names": [
+      "Bounded invoice payout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04793",
+    "source_heading_or_excerpt": "C01 | InvoiceGuard | Agent verifies invoices, detects duplicates/anomalies, and pays only policy-valid invoices. | Agent wallets, AP automation | Verifiable invoice-to-payment evidence chain | High"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-003"
+    ],
+    "names": [
+      "Objective milestone escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04794",
+    "source_heading_or_excerpt": "C02 | MilestoneEscrow Agent | Agent releases escrow only after structured milestone evidence and counterparty acceptance. | Escrow dapps | AI evidence triage + deterministic release policy | High"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-006"
+    ],
+    "names": [
+      "Metered service buyer"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04795",
+    "source_heading_or_excerpt": "C03 | ComputeBudget Wallet | Agent buys API/compute services within a hard budget and produces per-call receipts. | Coinbase x402 [docs.cdp.coinbase][docs.cdp.coinbase] | Budget lifecycle + anomaly detection + audit | High"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-021"
+    ],
+    "names": [
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04796",
+    "source_heading_or_excerpt": "C04 | Agent Payroll Treasury | Agent executes contributor payroll from a policy-bounded treasury with proof of payment. | DAO payroll tools | Policy + reconciliation + exception handling | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-017",
+      "IDEA-030"
+    ],
+    "names": [
+      "DAO contributor payout",
+      "Governance-to-execution agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04797",
+    "source_heading_or_excerpt": "C05 | DAO Ops Copilot | Agent prepares, simulates, and executes bounded DAO treasury operations. | Safe / DAO tooling | Human multisig + agent-prepared execution | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-011"
+    ],
+    "names": [
+      "Exact-intent execution firewall"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04798",
+    "source_heading_or_excerpt": "C06 | Payment Firewall | Agent intercepts risky transactions, simulates them, and explains/block dangerous approvals. | Wallet security tools | Agent-native pre-signature risk firewall | High"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-057"
+    ],
+    "names": [
+      "Subscription lifecycle agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04799",
+    "source_heading_or_excerpt": "C07 | Subscription Sovereign | Agent manages recurring payments with cancellation, receipt, and budget enforcement. | Subscription managers | On-chain recurring authorization with audit | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-005"
+    ],
+    "names": [
+      "RFQ procurement scout"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04800",
+    "source_heading_or_excerpt": "C08 | Procurement Agent | Agent sources quotes, checks budget, and pays approved vendors. | Procurement SaaS | End-to-end quote-to-pay evidence | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-018",
+      "IDEA-031"
+    ],
+    "names": [
+      "Agent service marketplace",
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04801",
+    "source_heading_or_excerpt": "C09 | A2A Settlement Ledger | Agents pay each other for services with machine-readable invoices and settlement proofs. | x402 [docs.cdp.coinbase][docs.cdp.coinbase] | Dispute-aware A2A commercial workflow | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04802",
+    "source_heading_or_excerpt": "C10 | Treasury Circuit Breaker | Agent monitors anomalies and automatically freezes spending during suspicious activity. | Wallet security | Autonomous incident response with enforceable pause | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-049"
+    ],
+    "names": [
+      "Policy drift sentinel"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04803",
+    "source_heading_or_excerpt": "C11 | Policy Drift Sentinel | Agent detects when its own behavior drifts from its authorized mandate and halts. | Agent monitoring | Self-auditing policy conformance | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-004"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Subjective dispute arbiter"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04804",
+    "source_heading_or_excerpt": "C12 | Cross-Agent Escrow | Two agents transact through conditional escrow with evidence-based release. | A2A payments | Structured dispute and arbitration state machine | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-063"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Liquidity forecasting assistant"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04805",
+    "source_heading_or_excerpt": "C13 | SME Cash-Flow Agent | Agent forecasts inflows/outflows and schedules stablecoin payments without overdraft. | Treasury tools | Liquidity-aware payment scheduling | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-008"
+    ],
+    "names": [
+      "Conditional grant steward"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04806",
+    "source_heading_or_excerpt": "C14 | Donor Assurance Wallet | Donors fund milestone-based aid; agent releases funds against verified evidence. | Charity payment rails | Transparent conditional disbursement | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-022"
+    ],
+    "names": [
+      "Parametric claims wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04807",
+    "source_heading_or_excerpt": "C15 | Parametric Claim Agent | Agent pays verified parametric claims from oracle feeds. | Parametric insurance | Automated claims with bounded exposure | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C16",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04808",
+    "source_heading_or_excerpt": "C16 | Cross-Chain Treasury Router | Agent rebalances treasury across chains under strict risk limits. | Bridge/Portfolio tools | Risk-aware routing with circuit breakers | Low"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-024"
+    ],
+    "names": [
+      "Agent credit wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04809",
+    "source_heading_or_excerpt": "C17 | Agent Credit Line | Agents receive bounded working capital and repay from future receipts. | Lending protocols | Underwriting + repayment automation | Low"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-031",
+      "IDEA-023"
+    ],
+    "names": [
+      "Decision and receipt ledger",
+      "Reconciliation agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04810",
+    "source_heading_or_excerpt": "C18 | Receipt Oracle | Agent anchors payment intent, simulation result, and execution receipt as tamper-evident evidence. | Audit logging | Verifiable agent decision provenance | High"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-036",
+      "IDEA-058"
+    ],
+    "names": [
+      "Counterparty fallback wallet",
+      "Agent identity and reputation passport"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04811",
+    "source_heading_or_excerpt": "C19 | Vendor Trust Passport | Agent maintains verifiable vendor history and adjusts payment limits accordingly. | Reputation systems | Dynamic policy from verified payment history | Medium"
+  },
+  {
+    "report": "R012",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-011",
+      "IDEA-064",
+      "IDEA-067"
+    ],
+    "names": [
+      "Exact-intent execution firewall",
+      "Approval ladder and preauthorization split",
+      "Owner recovery wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L04812",
+    "source_heading_or_excerpt": "C20 | Human-Sovereign Agent Wallet | Agent autonomously executes only inside a human-owned policy contract with emergency stop. | Smart accounts [assets.ctfassets] | “Autonomy inside sovereignty” architecture | High"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C01",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-003"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Objective milestone escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05126",
+    "source_heading_or_excerpt": "C1 | PayGuardian — Autonomous AP & Escrow Agent | AI agent ingests invoices, validates, escrows funds, releases on deliverable attestation, issues verifiable receipt | SME/DAO treasury (P1,P2,P11) | USDC transfers, escrow deposit/release, receipt commitment | Auto-pay below threshold; human approval"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C02",
+    "normalized_ids": [
+      "IDEA-050"
+    ],
+    "names": [
+      "Hierarchical sub-agent budget"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05127",
+    "source_heading_or_excerpt": "C2 | BudgetOrchestrator — Hierarchical sub-agent budget controller | Orchestrator holds weekly budget, delegates attenuated daily slices to specialist sub-agents (procurement, payroll, data), reallocates/cuts off | Dev teams running agent swarms (P4) | x402 payments, session-key grants/revocations |"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C03",
+    "normalized_ids": [
+      "IDEA-009"
+    ],
+    "names": [
+      "Defensive incident agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05128",
+    "source_heading_or_excerpt": "C3 | SentinelShield — Autonomous wallet incident-response agent | 24/7 monitor; on anomaly auto-revokes approvals, pauses sessions, sweeps funds to cold vault, escalates | Any wallet/DAO (P7) | revoke(approval), pause module, transfer to vault | Sweep >threshold requires human; auto-revoke always | "
+  },
+  {
+    "report": "R013",
+    "original_slot": "C04",
+    "normalized_ids": [
+      "IDEA-002",
+      "IDEA-063",
+      "IDEA-013"
+    ],
+    "names": [
+      "Obligation reserve treasury",
+      "Liquidity forecasting assistant",
+      "Surplus yield allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05129",
+    "source_heading_or_excerpt": "C4 | TreasuryForecaster — Cash-flow-aware bill scheduler | Forecasts obligations, pre-funds chains, schedules payments, sweeps idle USDC to audited lending with auto-exit | SME/DAO treasury (P3,P6,P12) | Scheduled transfers, CCTP bridge, Morpho deposit/withdraw | Strategy set by human; alerts | Poly"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C05",
+    "normalized_ids": [
+      "IDEA-031"
+    ],
+    "names": [
+      "Decision and receipt ledger"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05130",
+    "source_heading_or_excerpt": "C5 | ReceiptChain — Verifiable agent-decision receipt layer | Every agent action signs structured receipt (intent, policy version, simulation result, tx hash) committed on-chain | Compliance/audit (P14) | Commit hash to chain | None (read-only layer) | Kite receipts (proprietary) | Open, composable "
+  },
+  {
+    "report": "R013",
+    "original_slot": "C06",
+    "normalized_ids": [
+      "IDEA-025"
+    ],
+    "names": [
+      "Natural-language policy compiler"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05131",
+    "source_heading_or_excerpt": "C6 | PolicyPlain — Natural-language → on-chain policy compiler with safety audit | User types \"max $200/day, only these vendors, 10 tx/hr\" → compiled ERC-7710 caveats + adversarial check | All agent operators (interaction/innovation) | Install module, grant delegation | User signs compiled policy | "
+  },
+  {
+    "report": "R013",
+    "original_slot": "C07",
+    "normalized_ids": [
+      "IDEA-008"
+    ],
+    "names": [
+      "Conditional grant steward"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05132",
+    "source_heading_or_excerpt": "C7 | MilestoneGrant — Conditional disbursement agent | Grants/scholarships released in tranches on attestation (enrollment, deliverable); clawback on failure | Grantmakers, universities, DAOs (P9) | Escrow, release on attestation, clawback | Initial funding; disputes human | None integrated | Autono"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C08",
+    "normalized_ids": [
+      "IDEA-022"
+    ],
+    "names": [
+      "Parametric claims wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05133",
+    "source_heading_or_excerpt": "C8 | ParametricPayout — Insurance-claim auto-settlement agent | Oracle trigger → compute payout → release from escrow → receipt | Small insurers/clients (P10) | Oracle read, escrow release | Policy terms set; large payouts human | Etherisc (deterministic) | AI handles ambiguous claim docs + parametr"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C09",
+    "normalized_ids": [
+      "IDEA-021"
+    ],
+    "names": [
+      "Streaming payroll"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05134",
+    "source_heading_or_excerpt": "C9 | PayrollPilot — Compliant bulk-payout agent | Validates contractors, computes withholding, sanctions-screens, atomic bulk payout, on-chain paystubs | Global SMEs (P8) | Bulk ERC-20 transfer, paystub commit | Payroll register approved by human | Deel/Rise (centralized) | Non-custodial agent + on-"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C10",
+    "normalized_ids": [
+      "IDEA-057",
+      "IDEA-056"
+    ],
+    "names": [
+      "Subscription lifecycle agent",
+      "Performance-adjusted streaming"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05135",
+    "source_heading_or_excerpt": "C10 | SubSweeper — Subscription optimizer & streaming-payments agent | Detects unused subs, cancels, migrates recurring to streaming stablecoin, picks cheapest rail | Consumers/SME (P5) | Superfluid stream create/delete, card cancel (via API) | Cancellation confirmed by user | Truebill (fiat, manual"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C11",
+    "normalized_ids": [
+      "IDEA-016"
+    ],
+    "names": [
+      "Cross-chain treasury replenisher"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05136",
+    "source_heading_or_excerpt": "C11 | RouteOptimizer — Cross-chain treasury router | Monitors balances, routes USDC via CCTP cheapest/fastest, rebalances | Multi-chain DAO (P6) | CCTP burn/mint, transfers | Strategy + per-move cap | LayerZero/Stargate (no AI) | AI chooses route/time with bounded slippage policy | ★★"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C12",
+    "normalized_ids": [
+      "IDEA-070"
+    ],
+    "names": [
+      "Physical-delivery escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05137",
+    "source_heading_or_excerpt": "C12 | DvPAgent — Delivery-vs-payment procurement agent | Releases payment atomically on proof-of-delivery attestation; handles returns | Businesses (P11) | Escrow, release/refund | Terms approved | Traditional escrow | Atomic DvP with AI verification of delivery evidence | ★★"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C13",
+    "normalized_ids": [
+      "IDEA-043"
+    ],
+    "names": [
+      "Invoice factoring wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05138",
+    "source_heading_or_excerpt": "C13 | FactorFlow — On-chain receivables advance agent | Advances % against escrowed invoice based on on-chain buyer reputation | SMEs (P17) | Escrow, advance, repayment | Advance rate set; large advances human | Centrifuge (institutional) | SME-scale, agent-driven, reputation-scored | ★★★"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C14",
+    "normalized_ids": [
+      "IDEA-030"
+    ],
+    "names": [
+      "Governance-to-execution agent"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05139",
+    "source_heading_or_excerpt": "C14 | DAOExecutor — Governance-to-execution agent | Passed proposal → draft tx → policy check → execute via Safe | DAOs (P16) | Safe exec via module | Proposal vote is the authorization | Boardroom/Snapshot (no execution) | Autonomous, policy-bounded execution of passed votes | ★★"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C15",
+    "normalized_ids": [
+      "IDEA-010",
+      "IDEA-027"
+    ],
+    "names": [
+      "Approval hygiene",
+      "Gas and fee keeper"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05140",
+    "source_heading_or_excerpt": "C15 | GasJanitor — Account-hygiene agent | Revokes stale approvals, replaces stuck txs, manages paymaster gas | Teams (P18) | revoke, replace-by-fee, paymaster top-up | None (low-value ops) | Etherscan tools (manual) | Autonomous hygiene + risk-scored approvals | ★"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C16",
+    "normalized_ids": [
+      "IDEA-020"
+    ],
+    "names": [
+      "Private policy proof"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05141",
+    "source_heading_or_excerpt": "C16 | ZKPolicy — Zero-knowledge policy-compliant agent | Policy held in enclave; agent produces ZK proof of compliance; on-chain executor verifies proof | High-security treasuries | Verify proof + execute via ERC-7710 | Policy set; no per-tx human | Autonomify (hackathon demo) | Production-grade ZK "
+  },
+  {
+    "report": "R013",
+    "original_slot": "C17",
+    "normalized_ids": [
+      "IDEA-018",
+      "IDEA-003"
+    ],
+    "names": [
+      "Agent service marketplace",
+      "Objective milestone escrow"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05142",
+    "source_heading_or_excerpt": "C17 | A2AJobSettler — Agent-to-agent escrow with independent verifier agent | Two agents negotiate; escrow; third verifier agent attests completion; settle; reputation log | Agent operators (P13) | ERC-8183 escrow, attestation | None (agent-to-agent) | OKX AI, Virtuals (platforms) | Decentralized ve"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C18",
+    "normalized_ids": [
+      "IDEA-029"
+    ],
+    "names": [
+      "Student tuition and stipend wallet"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05143",
+    "source_heading_or_excerpt": "C18 | StudentStipend — Cross-border education finance agent | Schedules tuition/rent, cheapest remittance, builds on-chain payment history | International students (P15) | Stablecoin transfer, history commit | Parent/student approvals | Topic C solutions (advisory) | Executes cross-border payments a"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C19",
+    "normalized_ids": [
+      "IDEA-013"
+    ],
+    "names": [
+      "Surplus yield allocator"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05144",
+    "source_heading_or_excerpt": "C19 | YieldSentinel — Bounded conservative yield agent | Sweeps idle USDC to Morpho/Aave; auto-exits on oracle/risk signals; hard loss cap | Treasuries (P12) | deposit/withdraw lending | Cap + strategy set | Trading bots (unbounded) | Explicitly bounded, integrated with payment buffer | ★★"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C20",
+    "normalized_ids": [
+      "IDEA-051"
+    ],
+    "names": [
+      "Honeypot defender"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05145",
+    "source_heading_or_excerpt": "C20 | HoneypotDefender — Adversarial self-defense wallet | Lures attackers with decoy; detects exploit attempt; auto-freezes; publishes forensic evidence | Security showcase (P7) | freeze, revoke, emit event | None | None (research prototypes) | Adversarial demo strongly impresses security judges | "
+  },
+  {
+    "report": "R013",
+    "original_slot": "C21",
+    "normalized_ids": [
+      "IDEA-052"
+    ],
+    "names": [
+      "Multiple-rail payment router"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05146",
+    "source_heading_or_excerpt": "C21 | MultiRailPay — Card/stablecoin/streaming router per payment | Agent chooses cheapest rail (Visa agentic vs x402 vs streaming) for each outgoing payment | SMEs (P5) | x402, stablecoin, card via API | Rules set | lobster.cash (Crossmint) | AI selects rail dynamically with cost optimization | ★★"
+  },
+  {
+    "report": "R013",
+    "original_slot": "C22",
+    "normalized_ids": [
+      "IDEA-053"
+    ],
+    "names": [
+      "Intent route executor"
+    ],
+    "note": "Original numbered concept slot",
+    "source_anchor": "L05147",
+    "source_heading_or_excerpt": "C22 | IntentExecutor — Intent-based settlement agent | User states intent (\"pay this invoice by Friday\"); agent finds cheapest path (swap/bridge/rail) and executes within slippage bounds | All users | Swap/bridge/transfer | Intent approved; bounds enforced | 1inch Fusion, CoW Swap (no AI wallet) | I"
+  },
+  {
+    "report": "R014",
+    "original_slot": "visible architecture 1",
+    "normalized_ids": [
+      "IDEA-001",
+      "IDEA-011",
+      "IDEA-023",
+      "IDEA-031"
+    ],
+    "names": [
+      "Bounded invoice payout",
+      "Exact-intent execution firewall",
+      "Reconciliation agent",
+      "Decision and receipt ledger"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number; original sections 1–6 absent; visible recommendation/architecture only",
+    "source_anchor": "L05403",
+    "source_heading_or_excerpt": "### Architecture A — IntentLock payout wallet (recommended)"
+  },
+  {
+    "report": "R014",
+    "original_slot": "visible architecture 2",
+    "normalized_ids": [
+      "IDEA-006",
+      "IDEA-019",
+      "IDEA-023"
+    ],
+    "names": [
+      "Metered service buyer",
+      "Outcome-gated purchase",
+      "Reconciliation agent"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number; original sections 1–6 absent; visible recommendation/architecture only",
+    "source_anchor": "L05407",
+    "source_heading_or_excerpt": "### Architecture B — ServiceMeter / ReceiptReconciler"
+  },
+  {
+    "report": "R014",
+    "original_slot": "visible architecture 3",
+    "normalized_ids": [
+      "IDEA-003",
+      "IDEA-004"
+    ],
+    "names": [
+      "Objective milestone escrow",
+      "Subjective dispute arbiter"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number; original sections 1–6 absent; visible recommendation/architecture only",
+    "source_anchor": "L05410",
+    "source_heading_or_excerpt": "### Architecture C — MilestoneLatch escrow"
+  },
+  {
+    "report": "R014",
+    "original_slot": "visible architecture 4",
+    "normalized_ids": [
+      "IDEA-032"
+    ],
+    "names": [
+      "Adversarial wallet benchmark"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number; original sections 1–6 absent; visible recommendation/architecture only",
+    "source_anchor": "L05480",
+    "source_heading_or_excerpt": "| 2 | C20 | IntentProof Benchmark Wallet | No shared evidence of intent-preserving agent execution | Controlled testnet pass/fail transactions | Attack harness plus chain receipt oracle | ASB, InjecAgent, FinVault withdrawn | medium alone; high paired | very high | medium-high | medium | medium | Mu"
+  },
+  {
+    "report": "R014",
+    "original_slot": "visible architecture 5",
+    "normalized_ids": [
+      "IDEA-009",
+      "IDEA-067",
+      "IDEA-069"
+    ],
+    "names": [
+      "Defensive incident agent",
+      "Owner recovery wallet",
+      "Ephemeral session wallet"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number; original sections 1–6 absent; visible recommendation/architecture only",
+    "source_anchor": "L05483",
+    "source_heading_or_excerpt": "| 5 | C13/C16 | KeyRevoker / DelegationLedger | Agent privilege persistence and unclear attribution | Revoke scoped session / commit mandate | Owner-held root, short expiry, verifiable revocation | Safe, ERC-7710/7715, Privy, Turnkey | medium | high | medium | medium-low | medium-low | Customer proo"
+  },
+  {
+    "report": "R014",
+    "original_slot": "visible architecture 6",
+    "normalized_ids": [
+      "IDEA-008",
+      "IDEA-020"
+    ],
+    "names": [
+      "Conditional grant steward",
+      "Private policy proof"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number; original sections 1–6 absent; visible recommendation/architecture only",
+    "source_anchor": "L05510",
+    "source_heading_or_excerpt": "- **Most original but higher-risk idea:** privacy-preserving evidence-linked conditional aid/grant disbursement (C14), or attested compute escrow (C17). Both need additional privacy, verifier and operational research before a credible short demo."
+  },
+  {
+    "report": "R014",
+    "original_slot": "visible architecture 7",
+    "normalized_ids": [
+      "IDEA-019",
+      "IDEA-020"
+    ],
+    "names": [
+      "Outcome-gated purchase",
+      "Private policy proof"
+    ],
+    "note": "Ordinal among visible concepts; not an invented original C-number; original sections 1–6 absent; visible recommendation/architecture only",
+    "source_anchor": "L05510",
+    "source_heading_or_excerpt": "- **Most original but higher-risk idea:** privacy-preserving evidence-linked conditional aid/grant disbursement (C14), or attested compute escrow (C17). Both need additional privacy, verifier and operational research before a credible short demo."
+  },
+  {
+    "report": "R006",
+    "original_slot": "royalty/model attribution",
+    "normalized_ids": [
+      "IDEA-065"
+    ],
+    "names": [
+      "Royalty split and attribution payout"
+    ],
+    "note": "Visible problem-level proposal; detail incomplete",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  },
+  {
+    "report": "R006",
+    "original_slot": "ad-fraud micropayments",
+    "normalized_ids": [
+      "IDEA-066"
+    ],
+    "names": [
+      "Ad-fraud-aware micropayment"
+    ],
+    "note": "Visible problem-level proposal; detail incomplete",
+    "source_anchor": "L03220",
+    "source_heading_or_excerpt": "Autonomous Agent Wallets in Financial Architecture: Systems Evaluation, Security Boundaries, and Competition Strategy for Topic FExecutive FindingsThe emergence of autonomous artificial intelligence systems capable of holding capital, negotiating economic commitments, and executing cryptographic val"
+  }
+]

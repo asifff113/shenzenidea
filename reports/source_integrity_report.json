@@ -1,0 +1,273 @@
+{
+  "generated": "2026-10-14",
+  "total": 53,
+  "passed": 53,
+  "failed": 0,
+  "checks": [
+    {
+      "label": "hash:agent-wallet-post-audit-decision-summary.md",
+      "ok": true,
+      "detail": "3af6cdbfa51f8acf\u2026 (2856 bytes)"
+    },
+    {
+      "label": "hash:agent_wallet_research_report.md",
+      "ok": true,
+      "detail": "17135f13c322b6f0\u2026 (69603 bytes)"
+    },
+    {
+      "label": "hash:Audit_Report.md",
+      "ok": true,
+      "detail": "32e11f10f82828e4\u2026 (24921 bytes)"
+    },
+    {
+      "label": "hash:claudeaudit.md",
+      "ok": true,
+      "detail": "e7360bfc0e5a8b33\u2026 (64195 bytes)"
+    },
+    {
+      "label": "hash:finalaudit.md",
+      "ok": true,
+      "detail": "152fef930e56e2ac\u2026 (95624 bytes)"
+    },
+    {
+      "label": "hash:master_inventory.csv",
+      "ok": true,
+      "detail": "f57bd9c178e8076f\u2026 (81843 bytes)"
+    },
+    {
+      "label": "hash:master_inventory.json",
+      "ok": true,
+      "detail": "d4d07f307c6e3cb0\u2026 (123952 bytes)"
+    },
+    {
+      "label": "passage:summary_inventory",
+      "ok": true,
+      "detail": "in agent-wallet-post-audit-decision-summary.md"
+    },
+    {
+      "label": "passage:summary_ranking_top1",
+      "ok": true,
+      "detail": "in agent-wallet-post-audit-decision-summary.md"
+    },
+    {
+      "label": "passage:summary_provisional_preference",
+      "ok": true,
+      "detail": "in agent-wallet-post-audit-decision-summary.md"
+    },
+    {
+      "label": "passage:summary_strongest_alt",
+      "ok": true,
+      "detail": "in agent-wallet-post-audit-decision-summary.md"
+    },
+    {
+      "label": "passage:summary_different_family",
+      "ok": true,
+      "detail": "in agent-wallet-post-audit-decision-summary.md"
+    },
+    {
+      "label": "passage:summary_no_winner",
+      "ok": true,
+      "detail": "in agent-wallet-post-audit-decision-summary.md"
+    },
+    {
+      "label": "passage:finalaudit_x1_due",
+      "ok": true,
+      "detail": "in finalaudit.md"
+    },
+    {
+      "label": "passage:finalaudit_loss_formula",
+      "ok": true,
+      "detail": "in app/src/data/security.ts"
+    },
+    {
+      "label": "passage:original_research_cutoff",
+      "ok": true,
+      "detail": "in decision_package_extracted/Agent_Wallet_Decision_Package/Agent_Wallet_Decision_Report.md"
+    },
+    {
+      "label": "passage:finalaudit_submission_deadline",
+      "ok": true,
+      "detail": "in finalaudit.md"
+    },
+    {
+      "label": "passage:postaudit_decision_inventory",
+      "ok": true,
+      "detail": "in finalaudit.md"
+    },
+    {
+      "label": "passage:postaudit_hybrid008_lead",
+      "ok": true,
+      "detail": "in finalaudit.md"
+    },
+    {
+      "label": "passage:original_loss_formula",
+      "ok": true,
+      "detail": "in decision_package_extracted/Agent_Wallet_Decision_Package/Agent_Wallet_Decision_Report.md"
+    },
+    {
+      "label": "passage:ideea026_loss_certificate",
+      "ok": true,
+      "detail": "in decision_package_extracted/Agent_Wallet_Decision_Package/Agent_Wallet_Decision_Report.md"
+    },
+    {
+      "label": "ids:topShortlist",
+      "ok": true,
+      "detail": "HYBRID-008, IDEA-073, IDEA-001, HYBRID-002R, HYBRID-009, IDEA-033, HYBRID-001, HYBRID-003, IDEA-074, IDEA-081"
+    },
+    {
+      "label": "name:HYBRID-008",
+      "ok": true,
+      "detail": "Mandate-bound obligation treasury"
+    },
+    {
+      "label": "name:IDEA-073",
+      "ok": true,
+      "detail": "Budget envelope treasury"
+    },
+    {
+      "label": "name:IDEA-001",
+      "ok": true,
+      "detail": "Bounded invoice payout"
+    },
+    {
+      "label": "name:HYBRID-002R",
+      "ok": true,
+      "detail": "ServiceMeter with failure stop (revised)"
+    },
+    {
+      "label": "name:HYBRID-009",
+      "ok": true,
+      "detail": "Obligation-reserved agent commerce"
+    },
+    {
+      "label": "name:IDEA-033",
+      "ok": true,
+      "detail": "Original-payer refund governor"
+    },
+    {
+      "label": "name:HYBRID-001",
+      "ok": true,
+      "detail": "ObligationLock (as specified, custom executor)"
+    },
+    {
+      "label": "name:HYBRID-003",
+      "ok": true,
+      "detail": "PolicyProof payment conformance"
+    },
+    {
+      "label": "name:IDEA-074",
+      "ok": true,
+      "detail": "Forecast-buffer liquidity sweep"
+    },
+    {
+      "label": "name:IDEA-081",
+      "ok": true,
+      "detail": "Attestation-gated escrow"
+    },
+    {
+      "label": "gate:HYBRID-008",
+      "ok": true,
+      "detail": "gate=CONDITIONAL PASS decision=CONDITIONAL GO"
+    },
+    {
+      "label": "gate:IDEA-073",
+      "ok": true,
+      "detail": "gate=PASS decision=GO"
+    },
+    {
+      "label": "gate:IDEA-001",
+      "ok": true,
+      "detail": "gate=PASS decision=GO"
+    },
+    {
+      "label": "gate:HYBRID-002R",
+      "ok": true,
+      "detail": "gate=CONDITIONAL PASS decision=CONDITIONAL GO"
+    },
+    {
+      "label": "gate:HYBRID-009",
+      "ok": true,
+      "detail": "gate=CONDITIONAL PASS decision=CONDITIONAL GO"
+    },
+    {
+      "label": "gate:HYBRID-001",
+      "ok": true,
+      "detail": "gate=FAIL this round decision=NO-GO"
+    },
+    {
+      "label": "gate:HYBRID-003",
+      "ok": true,
+      "detail": "gate=FAIL this round decision=NO-GO"
+    },
+    {
+      "label": "gate:IDEA-081",
+      "ok": true,
+      "detail": "gate=FAIL this round decision=NO-GO"
+    },
+    {
+      "label": "exp:X1",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "label": "exp:X1b",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "label": "exp:X2",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "label": "exp:X3",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "label": "exp:X4",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "label": "exp:X5",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "label": "exp:X6",
+      "ok": true,
+      "detail": "present"
+    },
+    {
+      "label": "exp:status_pending",
+      "ok": true,
+      "detail": "all statuses read PENDING / no experiment run"
+    },
+    {
+      "label": "bn:nonempty",
+      "ok": true,
+      "detail": "6437 bytes"
+    },
+    {
+      "label": "bn:disclaimer",
+      "ok": true,
+      "detail": "labels itself as translation"
+    },
+    {
+      "label": "bn:script",
+      "ok": true,
+      "detail": "Bengali Unicode characters present"
+    },
+    {
+      "label": "bn:no_verbatim_quote",
+      "ok": true,
+      "detail": "does not inline source formulas"
+    },
+    {
+      "label": "inv:size",
+      "ok": true,
+      "detail": "96 entries (expected 96)"
+    }
+  ]
+}

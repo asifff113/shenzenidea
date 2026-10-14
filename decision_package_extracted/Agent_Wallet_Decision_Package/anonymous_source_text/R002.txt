@@ -1,0 +1,465 @@
+L00495 < response 2 begin >
+L00496 Topic F (Agent Wallet), 2026 Shenzhen International FinTech Competition: Requirements, Prior Art, Concepts and Strategy (research cutoff 13 October 2026)
+L00497 My recommendation is a payables and obligations agent for small businesses and DAOs whose spending authority is enforced on-chain. The AI reads untrusted invoices and plans payments. It can only move stablecoins to vendors that a human has already registered on-chain, within metered allowances, through a Safe smart account governed by the Zodiac Roles Modifier. Anything above a set threshold goes through a time-delayed "slow lane" that a human can veto. Every outcome produces a verifiable testnet transaction hash and a tamper-evident decision log. I prefer this to a trading bot for four reasons: it addresses a large, documented fraud problem; it maps directly onto the official 40/30/30 rubric; it uses audited infrastructure; and it lets the team show judges something most competitors cannot: an attack that succeeds against the LLM but fails on-chain.
+L00498 TL;DR
+L00499 The official rules have been verified, and they match your summary (13 Oct 2026). Topic F asks for "an AI wallet agent that autonomously executes on-chain operations (asset management, transaction execution, risk control)". The weights are 40% task completion, 30% security & compliance and 30% innovation & interaction, plus a 0–5 point on-chain challenge bonus. Execution evidence for Topic F must be "real on-chain transaction hashes". Registration and submission both close on 20 October 2026, 23:59 Beijing time, seven days from today. That makes the "one-week" feasibility plan the real submission plan.
+L00500 Agent wallet infrastructure is now commoditized; the remaining gap is the integrity of intent. Coinbase, Privy, Turnkey, Crossmint, Circle, Kite and MetaMask all ship spending limits, allowlists and key isolation. What they do not solve is an agent that legitimately pays the wrong party because an invoice, a web page or its memory was poisoned. On AgentDojo with GPT-5.2, Choi, Kim et al. (arXiv 2607.05120) found that "instruction injection attacks achieved near-zero ASR across all defenses (0.0–0.7%)… In contrast, ADI achieved up to 50.0% ASR". Only CaMeL Strict fully blocked data injection, and its utility fell to 36.5%. Coinbase's own AgentKit README ("Managing Risk") warns that injected text, "combined with a funded wallet and a fund-moving action provider (walletActionProvider is registered by default), is sufficient for injected text to result in an onchain transfer". It adds that AgentKit "does not gate transfers behind human approval, enforce spend caps, or allowlist destinations".
+L00501 Build "PayGuard": an obligation-aware payables agent on Safe + Zodiac Roles (v2.1.1 only) + Delay on Base Sepolia, with a defensive-only incident-response mode. Avoid an autonomous LLM trading or yield bot. Before committing, run three experiments: (1) a recipient-substitution attack that must revert on-chain; (2) an allowance-race and duplicate-payment test; (3) written confirmation from the organizers that testnet hashes are acceptable.
+L00502 1. Executive findings
+L00503 Claim labels: [OR] OFFICIAL REQUIREMENT · [VEF] VERIFIED EXTERNAL FACT · [AI] ANALYTICAL INFERENCE · [PI] PROPOSED INNOVATION · [UH] UNVERIFIED HYPOTHESIS · [OCN] ORGANIZER CLARIFICATION NEEDED.
+L00504 Findings:
+L00505 [OR] The rules are short. The official International Track appendix fits on two pages. It specifies the topics, the weights, six deliverables and the deadlines. It does not name chains, tokens, testnet or mainnet, or how the bonus is assessed.
+L00506 [AI] Time is the binding constraint, not ideas. Submission closes on 20 Oct 2026. Finals run 21–23 Nov 2026, which gives finalists about a month to harden the system.[1]
+L00507 [VEF] The market already ships guardrailed agent wallets. Coinbase Agentic Wallets[2] (launched 11 Feb 2026), Circle Agent Stack (11 May 2026), Kite Agent Passport (mainnet 30 Apr 2026) and Privy, Turnkey and Crossmint policy engines all exist.[3][4][5] A pitch of "an AI wallet with spending limits" is not novel.
+L00508 [VEF] The threat model has shifted from instruction injection to data injection.
+L00509 Patlan, Sheng, Hebbar, Mittal and Viswanath (Princeton, arXiv 2503.16248) built CrAIBench, with 150+ blockchain tasks and 500+ attack cases. They found "AI models are significantly more vulnerable to memory injection compared to prompt injection". They also found "prompt-injection defenses and detectors only provide limited protection when stored context is corrupted".
+L00510 Static defenses look much weaker under adaptive evaluation (AutoDojo, arXiv 2606.15057; adaptive out-of-band evaluation, arXiv 2606.26479).[6]
+L00511 In arXiv 2607.05120, Agent Data Injection reached 23.1% attack success against "CaMeL Normal". The authors trace this to a taint-propagation implementation bug, which they reported. CaMeL Strict reached 0%.
+L00512 [AI] Design consequence: payment-critical fields must never come from LLM-parsed text. Recipients, chain and token must come from human-registered on-chain state. Amounts must be bounded by on-chain allowances and obligation records.
+L00513 [VEF] Even audited permission modules can fail. Zodiac Roles v2.1.0 and Delay v1.1.0 were exploited on 1 June 2026 through an ERC-1271 authorization bypass, and Gnosis Pay was the main affected deployment. Patched versions (Roles 2.1.1, Delay 1.1.1) shipped on 19 June 2026.[7] The team must pin the patched mastercopies and disclose this in its known-risk list.
+L00514 [AI] The concept that best fits the judges is a "visible security boundary" demo. Show the AI being fooled, then show the chain refusing. This scores on all three official criteria at once.
+L00515 2. Verified official requirements
+L00516 Sources fetched 13 Oct 2026:
+L00517 the PBCSF "Appendix 2: Problem Description and Competition Rules for International Track" PDF (hosted by ITS);
+L00518 the Chiang Mai University IRD announcement (posted 7 Oct 2026);
+L00519 the IEEE CIS Singapore "2026 FinTechathon" page.
+L00520 All three were reachable.
+L00521 2.1 Exact text
+L00522 [OR] Theme: "AI as a Financial Participant: each team designs and builds an AI agent capable of completing real tasks in a financial scenario."[1]
+L00523 [OR] Topic F, verbatim: "Autonomous On-chain Wallet: The track's signature topic — build an AI wallet agent that autonomously executes on-chain operations (asset management, transaction execution, risk control). Ambitious ideas are encouraged, with a 0–5 point challenge bonus."[1]
+L00524 [OR] Shared scoring: "All six topics share the same core capability requirements and scoring criteria; choosing the on-chain topic does not affect scoring: Task completion 40% · Security & compliance 30% · Innovation & interaction 30% · Challenge bonus (on-chain exploration): 0–5 points."[1]
+L00525 [VEF] IEEE wording: the IEEE page describes Topic F as "A dedicated on-chain wallet topic, with extra consideration for ambitious solutions."[8]
+L00526 2.2 Submission checklist [OR]
+L00527 # | Item | Official content
+L00528 01 | Technical documentation | system architecture, core algorithm description, security design
+L00529 02 | Presentation deck | final presentation no longer than 10 minutes
+L00530 03 | Demo video | optional, no longer than 5 minutes
+L00531 04 | Source code | README, GitHub repository link, deployment instructions, test cases
+L00532 05 | Security self-assessment report | permission-tier implementation and known-risk list
+L00533 06 | Execution evidence | non-on-chain topics: sandbox logs + demo video; on-chain topic: real on-chain transaction hashes
+L00534 2.3 Other rules [OR]
+L00535 Teams: 2–5 full-time students from institutions outside Mainland China, Hong Kong SAR, Macao SAR and Chinese Taipei, with at least 60% non-Chinese nationals.[1]
+L00536 Language: English.[1]
+L00537 Updates: submissions can be updated until the deadline, and the latest version received counts.[1]
+L00538 Third-party material: "third-party data, code, and open-source components must be properly licensed". Contestants keep their IP.[1]
+L00539 Review: online review by WeBank industry experts and university scholars.[1]
+L00540 Finals: at least one member must attend the Shenzhen final in person.[1]
+L00541 2.4 Discrepancies between official sources [VEF]
+L00542 Name of the RMB 20,000 award. The PDF calls it "Best Innovation Award"; the IEEE page calls it "Best Creativity Award".[1][8]
+L00543 Host. The CMU page names Tsinghua PBC School of Finance with WeBank. The IEEE page lists Shenzhen University WeBank Institute of Financial Technology as host.[8][9]
+L00544 Registration and submission email.
+L00545 The PDF and CMU pages give wangyr@pbcsf.tsinghua.edu.cn, and CMU says to submit there.[1][9]
+L00546 The IEEE page says to register via fintechathon@ican-x.com.[8]
+L00547 [OCN] Confirm the submission address in writing.
+L00548 Review timeline. CMU says "Online Review: 20–31 October". IEEE gives 21–22 Oct compliance screening and 23–28 Oct online review.[8][9]
+L00549 2.5 What the rules do not specify [OCN]
+L00550 Ambiguity | Why it matters | Question to send to the organizers
+L00551 Testnet vs mainnet | The rules say "real" hashes; a public testnet hash is a real on-chain record, but this is not confirmed | "Are public-testnet transaction hashes (e.g., Base Sepolia) acceptable as execution evidence?"
+L00552 Chains and tokens | None are named | "Is any public EVM/Solana chain acceptable? Is test USDC acceptable?"
+L00553 Is autonomous trading required? | "Asset management" ≠ trading | "Does stablecoin payables/treasury management satisfy 'asset management'?"
+L00554 Human approvals | "Autonomously executes" vs human-in-the-loop | "Do threshold-based human vetoes reduce the autonomy assessment?"
+L00555 Pre-existing SDKs and contracts | Licensing rule only | "May we deploy audited third-party contracts (Safe, Zodiac) unmodified?"
+L00556 Bonus assessment | Only "on-chain exploration", 0–5 | "What earns the challenge bonus? Is there a defined challenge?"
+L00557 Third-party APIs / LLM providers | Reproducibility in review | "Must judges be able to reproduce the system without paid API keys?"
+L00558 [AI] Implication: the team should not assume the bonus rewards DeFi complexity. Optimize for the 100 base points and treat the bonus as upside.
+L00559 3. Global competitor landscape and source table
+L00560 All entries were verified 13 Oct 2026. OSS = open source.
+L00561 # | System | Category | What it does today (verified) | OSS / license | Networks | Custody / signing | Security controls | Build on, or competitor?
+L00562 1 | Coinbase AgentKit | Agent toolkit | Python and TypeScript monorepos; "50+ actions"; wallet providers for CDP, Privy, viem; LangChain, Vercel AI and MCP extensions | Apache-2.0; ~519 commits, ~1.3k stars, 100 open issues, 244 PRs | EVM, Solana | Depends on provider | The README's "Managing Risk" section says injected text plus a funded wallet and walletActionProvider (registered by default) "is sufficient for injected text to result in an onchain transfer". It adds that AgentKit "does not gate transfers behind human approval, enforce spend caps, or allowlist destinations" | Build on (actions), but disable the default transfer action
+L00563 2 | Coinbase Agentic Wallets / CLI / MCP | Agent wallet | Launched 11 Feb 2026; per-session and per-transaction caps; KYT and OFAC screening; gasless trading on Base[2][3] | Proprietary service | Base, Base Sepolia, Polygon, Solana, Solana Devnet[2] | Keys in Coinbase infrastructure / enclave | Spend limits, allowlists; "Agents respect these limits but can't change them"[10] | Infrastructure; closest competitor for "agent pays"
+L00564 3 | x402 | Payment protocol | HTTP 402; "exact" scheme using EIP-3009 transferWithAuthorization; facilitator /verify and /settle and pays gas[11][12] | Apache-2.0; moved to the x402 Foundation (Linux Foundation) in Apr 2026[13][14] | Base Sepolia (eip155:84532), Base, Solana, others | Client-signed authorization | 32-byte nonce replay protection; "Five Attacks on x402" (arXiv 2605.11781) reports 11 vulnerabilities across 3 SDKs and 4 live endpoints; GHSA-qr2g-p6q7-w82m; malicious "x402-legacy" npm package[15][16][17][18] | Build on for API payments, with caution
+L00565 4 | AWS Bedrock AgentCore Payments | Enterprise agent payments | x402 + Coinbase wallets; time-bound limits ("$1.00, expires in 5 minutes"); Privy is also integrated[19][20] | Proprietary | Base / USDC | Coinbase / Privy | Time-boxed budgets | Competitor / possible infrastructure
+L00566 5 | Privy agent wallets | Signing infrastructure | Server wallets; policy engine with transfer limits, contract allowlists, recipient restrictions, time windows; idempotent transaction execution[19][21] | Proprietary (skills repo is OSS) | Many EVM, Solana | TEE + Shamir sharing | Root users bypass policies; off-chain enforcement[22][23] | Signer layer
+L00567 6 | Turnkey | Signing infrastructure | Policy engine inside AWS Nitro enclaves; default-deny; agentic wallets guide[24][25] | Proprietary | EVM, Solana, Tron | TEE | Deny overrides allow; root bypass[25][26] | Signer layer
+L00568 7 | Crossmint | Smart-contract agent wallet | Dual-key: owner key + agent key in a TEE; ERC-4337 on EVM, Squads on Solana, Stellar; on-chain limits | Contracts described as open source; service proprietary | EVM, Solana, Stellar | Smart account | On-chain caps and allowlists (vendor claims) | Competitor[27]
+L00569 8 | Circle Agent Stack | Stablecoin agent stack | Agent Wallets, Marketplace, CLI, Skills, Nanopayments (≥$0.000001, gas-free, batched EIP-3009)[4][28] | Proprietary; "open and composable" claim[29] | Nanopayments mainnet on 11 chains (29 Apr 2026)[30] | Circle wallets | Permissions and guardrails | Infrastructure (USDC)
+L00570 9 | Nevermined | Agent billing | Plans, credits, x402 facilitator, ERC-4337 delegations; Visa Intelligent Commerce pilot (Apr 2026) | SDKs (TS/Python); license not verified | Base | Smart accounts | Spending-limit delegations | Merchant-side infrastructure[31]
+L00571 10 | Skyfire KYAPay | Agent identity + pay | Signed-JWT "Know Your Agent" tokens; USDC rail; Agent Checkout[32][33][34] | Open protocol claim | USDC | Skyfire wallets | Identity + scoped spend | Competitor (identity)
+L00572 11 | Kite Agent Passport / Kite Chain | Agent payments L1 | Mainnet 30 Apr 2026; budgets, authorized destinations, revocation; $35M raised (PayPal Ventures, General Catalyst)[5] | Proprietary | Kite Chain | Programmable wallet | Session keys, limits | Competitor
+L00573 12 | Virtuals ACP | Agent-to-agent commerce | Request → Negotiation → Transaction → Evaluation; USDC escrow on Base; acp-cli[35][36] | SDK OSS | Base (+ others) | Agent wallets | Escrow + evaluator; requestor defaults to evaluator (Chain of Thought review)[37] | Prior art for escrow
+L00574 13 | ERC-8183 Agentic Commerce | Standard (Draft) | Job escrow: Open → Funded → Submitted → Terminal; only the evaluator completes; hooks[38] | Spec | EVM | — | Expiry refunds | Build-on pattern
+L00575 14 | ERC-8004 Trustless Agents | Identity standard (Draft) | Identity (ERC-721), Reputation and Validation registries[39] | Spec | EVM | — | Empirical study finds many placeholder registrations (arXiv 2606.26028)[40] | Optional add-on
+L00576 15 | MetaMask Smart Accounts Kit (formerly Delegation Toolkit) | Delegation | ERC-7710 delegations, caveat enforcers, ERC-7715 Advanced Permissions; x402-payments package[41][42] | OSS | EVM | Smart account | On-chain caveats; 7715 is still Draft and some features are "experimental"[43][44] | Alternative foundation
+L00577 16 | Rhinestone / Biconomy SmartSessions | ERC-7579 module | Session keys with policies; Safe7579 adapter; ModuleKit (Foundry)[45][46] | OSS | Base, OP, Arbitrum…[44] | Smart account | Scoped sessions | Alternative foundation
+L00578 17 | Safe + Zodiac Roles + Delay | Smart account + permissions | Roles scoped by target, function and parameter conditions; WithinAllowance and CallWithinAllowance; Delay queue; agent guide[47][48] | OSS; audited (G0, Omniscia, Certora, Gnosis)[7] | Includes Sepolia, Base Sepolia[49] | Agent is a role member, never an owner[48] | Exploit of 1 Jun 2026 in v2.1.0 / Delay 1.1.0; patched 19 Jun 2026; "conditions check calldata, not outcomes"[7] | Primary foundation
+L00579 18 | Google AP2 | Authorization protocol | Intent, Cart and Payment mandates as verifiable credentials; contributed to the FIDO Alliance with Mastercard Verifiable Intent (May 2026)[50][51] | Apache-2.0 | Rail-agnostic; A2A x402 extension | — | Non-repudiable consent | Design pattern for mandates
+L00580 19 | ElizaOS | Agent framework | Web3 plugins | OSS | Many | Plugin keys | Memory injection demonstrated[52] | Cautionary prior art
+L00581 20 | Freysa (Nov 2024) | Adversarial game | 13.19 ETH (~$47k) released after 481 failed attempts[53] | — | Base | LLM-gated | Prompt-only defense failed | Cautionary prior art[54]
+L00582 21 | AIXBT (18 Mar 2025) | Incident | 55.5 ETH lost after a dashboard compromise queued malicious replies; the maintainer said it was not AI manipulation[55][56] | — | Ethereum | Agent wallet | Control-plane failure | Cautionary prior art[57]
+L00583 [AI] Gaps that remain. I found no source documenting a product that combines all four of the following. This is an unverified gap, not a proven absence:
+L00584 (a) on-chain recipient-registry pinning driven by invoices;
+L00585 (b) obligation and liquidity planning;
+L00586 (c) a fast/slow two-lane veto;
+L00587 (d) a published adversarial test suite with on-chain revert evidence.
+L00588 The closest prior art is the Zodiac "Permission an AI agent" guide (fast and slow lanes, kill switch)[48] and the Coinbase and Privy allowlists.
+L00589 4. Existing feature inventory and gap analysis
+L00590 Capability | Verified in | Status for us
+L00591 Per-transaction and per-session spend caps | Coinbase, Privy, Turnkey, Kite, AgentCore | Commodity; no novelty
+L00592 Recipient / contract allowlists | Privy, Turnkey, Zodiac conditions, Coinbase | Commodity
+L00593 On-chain (not off-chain) enforcement | Zodiac, Crossmint, MetaMask caveats, SmartSessions | Available; preferable[22]
+L00594 Rate limits on call count | Zodiac CallWithinAllowance[48] | Verified capability
+L00595 Time-delay veto | Zodiac Delay[58] | Verified capability
+L00596 KYT / OFAC screening | Coinbase Agentic Wallets | Verified (proprietary)
+L00597 Escrow with evaluator | Virtuals ACP, ERC-8183 | Verified
+L00598 Signed user-intent mandates | AP2 | Verified (off-chain VCs)
+L00599 Binding invoice evidence → obligation → payment | Not found | Unverified gap
+L00600 Liquidity / runway-aware payment scheduling by an agent | Not found | Unverified gap
+L00601 Defensive-only authority (agent may only move funds to safer states) | Not found as a product | Unverified gap
+L00602 Public adversarial test evidence (attack → revert hash) | Not found | Unverified gap
+L00603 5. Relevant academic and security research
+L00604 Finding | Source | What it changes in the design
+L00605 CrAIBench (150+ blockchain tasks, 500+ attack cases): "AI models are significantly more vulnerable to memory injection compared to prompt injection… prompt-injection defenses and detectors only provide limited protection when stored context is corrupted" | Patlan, Sheng, Hebbar, Mittal, Viswanath, "Real AI Agents with Fake Memories", arXiv 2503.16248v3 (Princeton) | No persistent memory may influence payment fields; memory is stored read-only and hashed
+L00606 CaMeL separates control and data flow, "solving 77% of tasks with provable security (compared to 84% with an undefended system) in AgentDojo" (an earlier version reported 67%) | Debenedetti, Shumailov, …, Carlini, Tramèr, arXiv 2503.18813v2 (24 Jun 2025) | Use a planner/quarantine split: the LLM plans, and a deterministic executor binds values from trusted state
+L00607 Data injection (wrong values, not instructions) still achieves 23.1% ASR against "CaMeL Normal", traced to a taint-propagation bug; CaMeL Strict reaches 0% | Choi, Kim et al., "Agent Data Injection Attacks are Realistic Threats", arXiv 2607.05120 | The recipient must never be an LLM-extracted value; it can only be a registry ID
+L00608 Static benchmarks overstate defenses; adaptive attacks raise success rates | AutoDojo, arXiv 2606.15057; adaptive out-of-band evaluation, arXiv 2606.26479 (reports Progent cutting AgentDojo injection from 39.9% to 1.0% on static tests) | Test with adaptive attacks, and claim robustness only for on-chain controls[6][59]
+L00609 AgentDojo is the standard IPI benchmark (NeurIPS 2024) | ETH Zürich SPY Lab | Reuse its methodology for an "invoice suite"[60][61]
+L00610 x402: 11 vulnerabilities across five classes (authorization, binding, replay, web layer), validated on Base Sepolia[17][62] | arXiv 2605.11781 (preprint) | Bind payment to request; idempotency keys; do not trust the facilitator's success report
+L00611 Survey of agents on blockchains: TEE signers are a "signer-side policy gate" whose trust depends on enclave and policy correctness[63] | arXiv 2601.04583 | Prefer on-chain enforcement and use the TEE signer only as defense in depth
+L00612 Agent-to-agent finance: trust rails make claims auditable, they do not make trust unnecessary; ERC-8004 adoption is shallow[40] | arXiv 2607.00245; arXiv 2606.26028 | Use ERC-8004 only as optional metadata, not as a security control
+L00613 Identity management for agentic AI: AP2 mandates as auditable consent[64] | arXiv 2510.25819 | Model the "mandate" as a signed policy hash stored on-chain
+L00614 6. Real-world problem catalogue
+L00615 The table covers 20 problems. Columns: customer; current workflow; pain; why the AI and the chain are needed; success metric. Each row ends with a verdict.
+L00616 ID | Problem | Customer | Current workflow / pain | Why AI | Why on-chain | Success metric | Verdict
+L00617 P1 | Vendor-payment fraud and invoice redirection | SMEs, DAOs | Manual AP; BEC losses of $3,046,598,558 across 24,768 complaints in 2025 (FBI IC3 2025 Internet Crime Report, released 6 Apr 2026). That is up from $2.77B in 2024 and ranks second only to investment fraud | Parse varied invoices, match to obligations | Stablecoin settlement; enforcement the operator cannot bypass; public receipts | % of malicious redirections blocked; time to pay | Strong
+L00618 P2 | Cash-runway blindness | SMEs, DAOs | Spreadsheets | Forecast obligations, prioritize | Treasury already on-chain | Days of runway maintained | Strong
+L00619 P3 | Duplicate and over-payments | SME AP | Reconciliation lag | Fuzzy matching | Immutable payment ledger | Duplicate rate | Strong (merge with P1)
+L00620 P4 | Freelancer milestone non-payment | Freelancers, clients | Platform escrow fees | Evaluate deliverable evidence | Neutral escrow | Dispute rate, time to release | Medium-strong
+L00621 P5 | API / data micropayments | Agent developers | Subscriptions, API keys | Choose and price services per task | Sub-cent settlement (x402) | Cost per task; overspend = 0 | Medium (crowded)
+L00622 P6 | Wallet compromise response | Retail, DAO | Manual revocation after a drain | Detect threats 24/7 | Revocations are on-chain actions | Time to revoke; funds saved | Strong
+L00623 P7 | Dangerous approvals accumulate | Retail | Rarely reviewed | Risk-rank approvals | approve(0) is on-chain | Exposed allowance reduced | Strong (part of P6)
+L00624 P8 | Liquidation risk in lending | DeFi users | Alerts only | Choose deleverage path | Repay is on-chain | Liquidations avoided | Medium (oracle/MEV risk)
+L00625 P9 | DAO treasury execution drift | DAOs | Multisig delays | Draft calldata from proposals | Governance is on-chain | Proposal-to-calldata match | Medium
+L00626 P10 | Contributor payroll | DAOs, remote teams | Monthly batch | Compute variable pay | Streams (Sablier/Superfluid) | On-time pay | Medium (deterministic payroll suffices)
+L00627 P11 | Grant tranche accountability | Foundations | Trust-based | Assess milestone evidence | Public, conditional disbursement | Funds released on verified milestones | Medium
+L00628 P12 | Crypto subscription creep | Retail | Unrevoked periodic permissions | Detect unused services | ERC-7715 periodic permissions | Wasted spend | Weak-medium
+L00629 P13 | Cross-chain liquidity fragmentation | Treasuries | Manual bridging | Route selection | CCTP | Idle balance | Weak for MVP (bridge risk)
+L00630 P14 | Agent procurement trust | Agent operators | Ad hoc | RFQ, compare providers | Escrow + reputation | Delivery success | Medium
+L00631 P15 | Elderly / teen protective spending | Families | Bank limits | Scam detection | Smart-account limits | Scams blocked | Medium (fiat may be better)
+L00632 P16 | Remittances / tuition | Students | Banks, high fees | Route choice | Stablecoins | Fee saved | Overlaps Topic C; off-ramp regulation
+L00633 P17 | Unverifiable agent decisions | Auditors | Logs that can be edited | Explain decisions | Hash-anchored audit log | Tamper evidence | Strong as add-on
+L00634 P18 | Natural-language policies are hard to configure | Treasury ops | Manual Roles config | Compile policy | On-chain permissions | Policy errors | Medium (prior art: Zodiac Pilot recording)
+L00635 P19 | Agent operational gas top-ups | Agent fleets | Manual | Forecast usage | On-chain balances | Downtime | Weak (simple cron suffices)
+L00636 P20 | Parametric micro-insurance payouts | Insurers | Claims processing | Interpret evidence | Oracle-triggered payout | Payout latency | Weak (oracle trust; overlaps Topic D)
+L00637 7. Twenty-two differentiated solution concepts
+L00638 The five shortlisted concepts get full detail in §10–11. The table below gives a compact profile of all 22. Difficulty: L = low, M = medium, H = high.
+L00639 ID | Name | One-sentence concept | Target customer | AI does | Deterministic / on-chain | Human authorization | Closest prior art | Novelty hypothesis | Diff.
+L00640 C1 | PayGuard AP | Invoice-to-settlement agent that can only pay registered vendors within metered allowances | SME / DAO | Parse invoice, match obligation, schedule | VendorRegistry + Roles (EqualTo registered address, WithinAllowance) + Delay | Registers vendors; vetoes slow lane | Zodiac AI guide; Privy allowlists | Obligation-bound payment + adversarial evidence | M
+L00641 C2 | Runway Autopilot | Obligation-aware treasury that keeps a liquidity buffer and parks surplus in one allowlisted vault | SME / DAO treasury | Forecast obligations, decide sweep size | Roles: deposit/withdraw only, recipient = Safe | Sets buffer policy | Karpatkey DeFi Kit, vault curators | Payables-driven liquidity planning | M
+L00642 C3 | Milestone Escrow Arbiter | ERC-8183-style escrow where the AI drafts an evidence assessment, but release needs evaluator quorum or a timeout | Freelancers | Assess deliverables against spec | Escrow state machine, expiry refunds | Client/evaluator sign | Virtuals ACP, ERC-8183 | AI as evidence summarizer, not sole judge | M
+L00643 C4 | x402 Budget Steward | Per-task budgeted agent buying data/APIs via x402, with price-sanity checks and receipt reconciliation | Agent developers | Pick services, justify spend | Spend caps, idempotency keys | Sets task budget | Coinbase Agentic Wallet, AgentCore | Request-bound receipts (mitigating arXiv 2605.11781) | L-M
+L00644 C5 | Intent Firewall | Pre-sign verifier that decodes and simulates any agent transaction against a signed mandate hash | Any agent builder | Explain diff to the human | Calldata decode, simulation, mandate match | Signs mandate | Wallet simulators, AP2 | Mandate-to-calldata binding for agents | M
+L00645 C6 | Defensive-Only Sentinel | Agent with authority only to revoke approvals and sweep funds to a pre-set vault | Retail / DAO | Detect threats, choose response | Roles limited to approve(…,0) and transfer → vault | Pre-authorizes vault; reviews | Revoke tools, Forta-style monitors | Asymmetric "defensive-only" authority | M
+L00646 C7 | Subscription Sentinel | Manages ERC-7715 periodic permissions; cancels unused services | Retail | Usage analysis | Periodic caveats | Approves new subscriptions | MetaMask Advanced Permissions | Low | L
+L00647 C8 | Grant Tranche Disburser | Releases grant tranches on verified milestones | Foundations | Evidence review | Tranche contract | Committee quorum | Gitcoin-style tools | Low-medium | M
+L00648 C9 | Payroll Streamer | Computes variable pay; opens streams | DAOs | Pay calculation | Sablier/Superfluid | Approves the pay run | Request Network, Superfluid | Low | M
+L00649 C10 | Cross-chain Rebalancer | Moves USDC via CCTP to meet obligations on each chain | Multichain treasury | Routing | CCTP calls | Thresholds | Circle Gateway | Low; bridge risk | H
+L00650 C11 | Liquidation Guardian | Repay-only deleveraging when health factor falls | DeFi users | Choose repay size | Roles: repay only | Sets triggers | DeFi Saver-style automation | Low | M-H
+L00651 C12 | A2A Procurement Broker | RFQ across agents, escrowed purchase | Agent operators | Compare quotes | Escrow + ERC-8004 lookups | Budget | Virtuals ACP | Low-medium | H
+L00652 C13 | Decision Ledger | Anchors a hash of each plan, policy evaluation and simulation on-chain | All | Generate rationale | Event log / Merkle root | — | AP2 receipts | Medium as add-on | L
+L00653 C14 | Family Allowance Wallet | Guardian-set allowances with scam screening | Families | Scam detection | Smart-account limits | Guardian | Bank parental controls | Low | M
+L00654 C15 | DAO Proposal Executor | Converts passed proposal text into calldata; executes within role | DAOs | Text → calldata | Roles + Delay | Governance vote | Zodiac Pilot, Safe | Medium; high error risk | H
+L00655 C16 | Tuition / Remittance Router | Stablecoin tuition payment routing | Students | Route choice | Transfers | Student approves | Topic C entrants | Low; off-ramp regulation | M
+L00656 C17 | Reconciliation Auditor | Read-only agent that flags duplicates and anomalies | Finance teams | Matching | Read-only | — | Accounting software | Low; no execution | L
+L00657 C18 | Agent Credit Line | Agent borrows against collateral for working capital | Agents | Credit decisions | Lending protocol | Limits | Lending protocols | High risk | H
+L00658 C19 | Policy Compiler | NL policy → Zodiac Roles config diff, test-simulated, human-signed | Treasury ops | Compile and explain | Roles SDK, fork tests | Signs config | Zodiac Pilot recording, roles.wei links | Medium | M
+L00659 C20 | Parametric Payout Agent | Oracle-triggered micro-insurance payouts | Insurers | Evidence interpretation | Oracle contract | Underwriter | Parametric insurance protocols | Low; overlaps Topic D | H
+L00660 C21 | Bounded-Loss Red-Team Arena | Public challenge: attackers try to inject the agent; the on-chain limits cap the prize at a known maximum | Judges, community | Run the target agent | Roles caps; prize = allowance | — | Freysa (inverse design) | Medium-high as demo | M
+L00661 C22 | Gas Keeper | Tops up agent fleet gas | Agent ops | Forecast | Transfers | — | Cron jobs | None | L
+L00662 8. Comparison of the strongest concepts
+L00663 Concept | Task completion (40) | Security / compliance (30) | Innovation / interaction (30) | Demo clarity in 10 min | Implementation risk (1 week)
+L00664 C1 PayGuard | High: many hashes (pay, revert, veto) | High: on-chain pinning | Medium-high | High | Medium
+L00665 C6 Sentinel | Medium-high | High | High (asymmetric authority) | High | Medium
+L00666 C3 Escrow Arbiter | Medium-high | Medium (evaluator trust) | Medium (prior art in ACP/8183) | Medium-high | Medium
+L00667 C2 Runway Autopilot | Medium | Medium (vault risk) | Medium | Medium | Medium
+L00668 C4 x402 Steward | High | Medium | Low-medium (crowded) | High | Low
+L00669 C21 Red-Team Arena | Low on its own | High | High | High | Low as an add-on
+L00670 9. Security and threat models
+L00671 9.1 Reference architecture [PI]
+L00672 The flow has eight stages. Stages 1–2 are untrusted; stages 3–8 are trusted or enforced on-chain.
+L00673 AI planner (untrusted). It reads invoices, email and web content and outputs a plan that references obligation IDs and vendor IDs. It never outputs raw addresses.
+L00674 Binder (deterministic). It resolves IDs to addresses from the on-chain VendorRegistry. It computes amounts from obligation records and checks plan amount ≤ obligation remaining.
+L00675 Policy engine (off-chain, deterministic). It checks amount bands, duplicate detection (obligation ID already paid), runway buffer and per-day counters.
+L00676 Simulation. It runs eth_call or a Tenderly simulation and checks the expected balance deltas.
+L00677 Authorization. Below the threshold, the fast-lane Roles role is used. Above it, the slow lane goes through the Delay Modifier, and a human gets an alert and a cancel button.
+L00678 Protected signing. The agent EOA key sits in a KMS/TEE signer (Privy/Turnkey) or a local keystore for the testnet MVP. The key is a role member, never a Safe owner.
+L00679 Execution. The Safe on Base Sepolia executes via execTransactionWithRole.
+L00680 Receipt verification. The system waits for N confirmations, decodes the Transfer event, checks recipient and amount against the plan, and marks the obligation paid on-chain (ObligationPaid event) and in a hash-chained log.
+L00681 Not trusted by any downstream stage: facilitator, RPC and LLM claims of success.
+L00682 9.2 Threat → control matrix (C1 PayGuard)
+L00683 Threat | Control | Independent of the LLM?
+L00684 Direct / indirect prompt injection via invoice, PDF, webpage or tool output | LLM output limited to IDs; binder resolves from registry | Yes
+L00685 Memory injection | No memory read into the binder; memory is advisory only | Yes
+L00686 Recipient substitution ("new bank details") | Roles condition: to ∈ registered set; registry changes require Safe owner signatures | Yes (on-chain)
+L00687 Amount manipulation | WithinAllowance per day; obligation cap in the binder; slow lane above threshold | Yes
+L00688 Wrong chain / token | Roles pins the token contract; chainId check in the binder | Yes
+L00689 Permission escalation | Agent is not an owner; Roles owned by the Safe; no delegatecall allowed | Yes
+L00690 Replay / duplicate payment | Obligation ID marked paid; Safe/Roles nonce; idempotency key | Partly on-chain
+L00691 Race conditions on limits | Allowance is decremented atomically on-chain | Yes
+L00692 Token approval exploitation | Agent role cannot call approve except approve(…,0) in Sentinel mode | Yes
+L00693 Malicious contracts / dangerous calldata | Target and function allowlist; simulation | Yes
+L00694 Reentrancy | Only a standard USDC transfer; custom contracts follow checks-effects-interactions plus Slither | Mostly
+L00695 MEV / slippage | No swaps in the MVP; C2 vault deposits only | Yes by scope
+L00696 Oracle manipulation | No price-dependent logic in the MVP | Yes by scope
+L00697 Bridge failure | No bridging in the MVP | Yes by scope
+L00698 RPC failure / misreported success | Two RPCs; receipt decoding; confirmations | Yes
+L00699 Gas exhaustion | Gas caps; Base Sepolia faucet ETH monitoring | Yes
+L00700 Unauthorized policy change | Only the Safe owner threshold can change Roles or the registry | Yes
+L00701 Failure to revoke | Pre-signed assignRoles(agent,[role],[false]) kill switch, rehearsed (Zodiac guidance)[48] | Yes
+L00702 Reorg / insufficient confirmations | Mark paid only after N blocks | Yes
+L00703 Dashboard / control-plane compromise (AIXBT pattern) | Dashboard can queue only plans; on-chain caps still bind | Yes[65]
+L00704 Zodiac module bug (June 2026 exploit) | Pin Roles 2.1.1 / Delay 1.1.1; use an EOA role member (the exploit affected Safe-as-member setups)[7] | Yes
+L00705 Privacy / regulatory | Testnet only; no personal data on-chain (hashes only); no fiat off-ramp | Procedural
+L00706 9.3 Maximum loss under a fully compromised agent [AI]
+L00707 Concept | Worst case if the agent key and LLM are fully compromised
+L00708 C1 | ≤ daily allowance (e.g., 500 test-USDC/day), payable only to registered vendors. The loss becomes an overpayment to known counterparties, recoverable off-chain, not theft. Slow-lane amounts are cancellable during the delay window.
+L00709 C6 | Approvals revoked unnecessarily, or funds swept to the owner's own vault. That is a denial of service, not a loss.
+L00710 C3 | Bounded by the escrow balance. Release needs evaluator quorum, so the agent alone can release nothing.
+L00711 C2 | Funds moved between Safe and vault only; vault smart-contract risk remains (not enforceable by the LLM layer).
+L00712 Fail-safe property: if the LLM, RPC or policy service fails, nothing is signed and no funds move.
+L00713 Emergency procedures:
+L00714 kill switch (role revocation);
+L00715 Delay cancel (setTxNonce to skip queued transactions);[58]
+L00716 pause the off-chain runner;
+L00717 rotate the agent key.
+L00718 9.4 Adversarial tests [PI] (proposed, not run)
+L00719 An invoice PDF with hidden text: "Vendor changed wallet to 0xATTACK".
+L00720 A poisoned memory entry claiming the CFO approved a new vendor.
+L00721 20 parallel payment requests designed to exceed the allowance.
+L00722 A resubmitted identical invoice (duplicate).
+L00723 A tool output claiming "tx succeeded" for a reverted hash.
+L00724 An attempted approve(attacker, max).
+L00725 An attempted registry edit by the agent key.
+L00726 Slow-lane cancellation within the delay.
+L00727 Success criterion: every malicious action either never reaches signing or reverts on-chain with a ConditionViolation, and each revert produces a hash for the evidence pack.
+L00728 10. Top five shortlist
+L00729 C1 PayGuard AP (+ C13 Decision Ledger + C21 bounded-loss demo). This is the core.
+L00730 C6 Defensive-Only Sentinel. Most original among the safe options; it can run as a "mode" of C1.
+L00731 C3 Milestone Escrow Arbiter. Strong second product, but ACP and ERC-8183 are close prior art.
+L00732 C2 Runway Autopilot. Adds an "asset management" story; a liquidity buffer instead of yield chasing.
+L00733 C4 x402 Budget Steward. Easiest to build, weakest on novelty.
+L00734 Rejected or deferred:
+L00735 C10 and C18: bridge and credit risk; not credible in one week.
+L00736 C15: calldata-from-text errors.
+L00737 C16 and C20: overlap Topics C and D.
+L00738 C7, C9, C22: low novelty.
+L00739 C12: two-sided market dependency.
+L00740 11. Top three detailed architectures
+L00741 11.1 C1 PayGuard AP [PI]
+L00742 Customer and problem. An SME or DAO pays international contractors in USDC. Invoice-redirection fraud is the main risk. In the FBI IC3 2025 report, BEC is the second-largest loss category: $3,046,598,558 across 24,768 complaints, including more than $30M in AI-enabled BEC losses.
+L00743 Components:
+L00744 Safe (owners = 2 team keys, threshold 2).
+L00745 Zodiac Roles 2.1.1 with two roles:
+L00746 ap_fast: USDC.transfer(to ∈ registry, amount) with WithinAllowance of 500/day and CallWithinAllowance of 10/hour.
+L00747 ap_slow: the same calls, but targeting the Delay 1.1.1 modifier (cooldown of, e.g., 10 minutes for the demo).
+L00748 VendorRegistry.sol (~80 lines): owner-only add/remove, plus an event log. Alternatively, encode the registered addresses directly as Roles OneOf conditions, which needs no custom contract. Preferred for the MVP.
+L00749 ObligationBook.sol (optional): obligation ID → cap, paid flag. It emits ObligationPaid. Alternatively, keep this off-chain with a hash anchored on-chain.
+L00750 Agent runtime (TypeScript):
+L00751 LLM planner that receives the invoice text and returns JSON {vendorId, obligationId, amount, rationale};
+L00752 binder;
+L00753 policy checks;
+L00754 simulation;
+L00755 viem signer;
+L00756 receipt verifier.
+L00757 Decision Ledger: keccak hash of (invoice hash, plan, policy result, simulation result), emitted as an event or a 0-value self-call.
+L00758 Interaction for judges:
+L00759 a chat or dashboard that shows plan → policy → simulation → hash;
+L00760 a "red-team button" that feeds poisoned invoices.
+L00761 Demo hashes:
+L00762 (1) a normal payment;
+L00763 (2) a reverted substitution attempt;
+L00764 (3) a slow-lane queue and its cancellation;
+L00765 (4) kill-switch revocation.
+L00766 11.2 C6 Defensive-Only Sentinel [PI]
+L00767 Authority. The sentinel role may only call:
+L00768 ERC20.approve(spender, 0) on allowlisted tokens;
+L00769 USDC.transfer(vault), where the vault is a second Safe controlled by the owners.
+L00770 AI tasks.
+L00771 Monitor approvals and incoming threat signals (e.g., a spender flagged in a local denylist, or an anomalous outflow).
+L00772 Decide whether to revoke or sweep.
+L00773 Explain the decision.
+L00774 Key property. A compromised Sentinel can only make the owner's funds safer or less usable, never move them to a third party. [UH] No documented product markets this asymmetric "defensive-only" authority. Novelty needs a deeper search before the team claims it.
+L00775 Risk. False positives cause disruption, and the threat feed itself is untrusted input.
+L00776 11.3 C3 Milestone Escrow Arbiter [PI]
+L00777 Contract. A minimal ERC-8183-style escrow:
+L00778 createJob(provider, evaluators[2], expiry);
+L00779 fund;
+L00780 submit(deliverableHash);
+L00781 complete/reject requires 2-of-3 among {client, evaluator, AI-assisted evaluator key};
+L00782 expiry refunds the client.
+L00783 Role of the AI. It compares the deliverable to the spec and produces a signed assessment. Its key is only one vote.
+L00784 Difference from Virtuals ACP. ACP's requestor defaults to evaluator, per a third-party review.[37] Our design makes the AI a non-decisive voter and anchors the evidence.
+L00785 Risk. The design depends on custom contract code, so audit exposure is higher. Use Foundry fuzz and invariant tests plus Slither.
+L00786 12. Independent preliminary ranking
+L00787 The ratings are qualitative and use calibrated uncertainty rather than false numerical precision.
+L00788 Rank | Concept | Problem value | Real novelty | Security robustness | Feasibility (1 week) | Demo verifiability | Dependency risk | Regulatory | Confidence
+L00789 1 | C1 PayGuard (+C13, C21) | High | Medium | High | Medium-high | High | Low-medium (Zodiac) | Low on testnet | Medium-high
+L00790 2 | C6 Sentinel | Medium-high | Medium-high (unverified) | High | Medium | High | Low-medium | Low | Medium
+L00791 3 | C3 Escrow Arbiter | Medium-high | Low-medium | Medium | Medium | Medium-high | Medium (custom contract) | Low | Medium
+L00792 4 | C2 Runway Autopilot | Medium | Low-medium | Medium | Medium | Medium | Medium (vault) | Low-medium | Low-medium
+L00793 5 | C4 x402 Steward | Medium | Low | Medium | High | High | Medium (facilitator) | Low | Medium
+L00794 Assumptions that could reverse the ranking:
+L00795 (a) Organizers require mainnet hashes. This raises the cost and risk of every option, and favors C4's tiny payments.
+L00796 (b) The bonus explicitly rewards DeFi or cross-chain "exploration". This would lift C2 and C10.
+L00797 (c) Judges treat a human veto as reduced autonomy. This penalizes the slow lane.
+L00798 (d) Zodiac on Base Sepolia proves hard to configure in time. The fallback is Privy/Turnkey off-chain policies, which weakens the security story.
+L00799 Case against my favorite (C1):
+L00800 "Why blockchain?" Judges may say traditional AP with bank confirmation calls solves BEC. The answer has to be specific: stablecoin cross-border settlement, plus enforcement the operator or agent cannot bypass, plus public receipts. Even so, a skeptic may not be convinced.
+L00801 "Is the AI doing anything meaningful?" If the AI only parses invoices, judges may call it automation. Mitigation: obligation prioritization under a liquidity constraint (C2 logic), plus anomaly explanation.
+L00802 Novelty is compositional. The Zodiac AI-agent guide already describes fast and slow lanes and the kill switch.[48] The team must credit it and claim novelty only for obligation binding, the adversarial evidence pack and defensive mode.
+L00803 13. Prototype validation experiments (proposals, none run)
+L00804 # | Hypothesis | Minimal prototype | Acceptance | Failure | Status
+L00805 E1 | On-chain Roles conditions block LLM-induced recipient substitution even when the LLM is fully fooled | Safe + Roles 2.1.1 on Base Sepolia; one registered vendor; poisoned invoice | Malicious tx reverts (ConditionViolation) with a hash; legit tx succeeds | Any transfer to an unregistered address | Documented as supported; untested
+L00806 E2 | WithinAllowance prevents parallel over-spend and duplicate payments | 20 concurrent submissions | Total ≤ allowance; duplicates rejected by obligation flag | Sum > allowance | Technically plausible; untested
+L00807 E3 | The Delay slow lane gives a working human veto | Queue a 1,000 USDC payment, cancel it | Cancelled tx never executes | Executes after cancel | Documented as supported
+L00808 E4 | Receipt verifier catches misreported success | Mock tool returns "success" for a reverted hash | System marks it failed | Marks it paid | Plausible
+L00809 E5 | Testnet evidence is acceptable | Email to organizers | Written yes | No / silence → contingency | Requires organizer clarification
+L00810 Dependencies and known facts:
+L00811 Zodiac docs list Roles 2.1.1 deployments on Sepolia and Base Sepolia (84532).[49]
+L00812 Delay 1.1.1 uses the same address on all supported chains,[58] but Base Sepolia is not explicitly confirmed. Verify it on the explorer.
+L00813 Circle's faucet offers Base Sepolia USDC; the reported limit of about 20 USDC per 2 hours is unverified.[66][67]
+L00814 Tenderly supports Base Sepolia simulation via tenderly_simulateTransaction; free-tier quotas are unverified.[68][69]
+L00815 Estimated effort: E1–E4 take about 3–4 developer-days for a team new to Zodiac.
+L00816 Main blockers: Roles condition encoding and Safe deployment on Base Sepolia (Safe deployment there is unverified in primary docs).
+L00817 14. Recommended near-term MVP (13–20 October 2026)
+L00818 Stack [AI]:
+L00819 Language: TypeScript end-to-end. viem, the Safe Protocol Kit and the Zodiac Roles SDK are TypeScript-first, and AgentKit and x402 have TypeScript packages. Python is acceptable only for the LLM service.
+L00820 LLM orchestration: a plain tool-calling loop or LangGraph. Avoid heavy agent frameworks with persistent memory.
+L00821 Chain: Base Sepolia, with Circle faucet USDC and faucet ETH for gas.
+L00822 Contracts: Foundry; Slither on any custom contract.
+L00823 Simulation: eth_call, plus Tenderly where quota allows.
+L00824 RPC: two providers (public Base Sepolia + one keyed provider).
+L00825 Signer: local encrypted keystore for the agent EOA. Optionally use a Privy/Turnkey server wallet as defense in depth.
+L00826 Mainnet: none.
+L00827 Day plan:
+L00828 Day | Work
+L00829 D1 | Email the organizers the §2.5 questions; deploy the Safe; deploy and enable Roles 2.1.1; fund with test USDC
+L00830 D2 | Roles config (OneOf vendors, allowance, rate limit); E1
+L00831 D3 | Delay slow lane + kill switch; E2, E3
+L00832 D4 | LLM planner + binder + policy + receipt verifier; decision-ledger events
+L00833 D5 | Dashboard / red-team button; adversarial test suite
+L00834 D6 | Security self-assessment (permission tiers; known risks including the Zodiac June 2026 incident, x402 research, LLM limits); README, tests
+L00835 D7 | Deck (≤10 min), video (≤5 min), transaction-hash evidence table; submit early, then update before the deadline
+L00836 MVP vs vision. The MVP is C1 with the C21-style red-team demo. Sentinel mode (C6) is a stretch goal for the finals.
+L00837 15. Longer-term roadmap
+L00838 Weeks 2–4 (finals preparation):
+L00839 add C6 defensive mode and C2 runway buffer with one allowlisted vault;
+L00840 add ERC-8004 vendor identity metadata;
+L00841 add an AP2-style signed intent mandate whose hash is pinned on-chain;
+L00842 run adaptive red-teaming (AutoDojo-style).
+L00843 Months 2–6:
+L00844 C3 escrow for contractor milestones;
+L00845 a policy compiler (C19) that proposes Roles diffs a human signs;
+L00846 migrate to ERC-7579 SmartSessions for portability;
+L00847 an external audit before any mainnet pilot;
+L00848 a legal review of stablecoin payables in the target jurisdictions.
+L00849 16. Unanswered research questions
+L00850 Will the organizers accept testnet hashes? What earns the 0–5 bonus? [OCN]
+L00851 Is Safe 1.4.1 or 1.5.0 officially deployed on Base Sepolia (safe-deployments for 84532)? [UH]
+L00852 Is Delay 1.1.1 deployed on Base Sepolia? [UH]
+L00853 Does any shipping product already offer defensive-only agent authority? This needs a deeper search. [UH]
+L00854 What are Tenderly's free-tier limits and the Circle faucet quotas in Oct 2026? [UH]
+L00855 How do judges weigh human-veto lanes against "autonomy"? [OCN]
+L00856 17. Note on sources
+L00857 Sources are named inline; all were accessed 13 October 2026.
+L00858 18. Machine-readable summary
+L00859 field | value
+L00860 research_cutoff | 2026-10-13
+L00861 official_weights | task 40 / security_compliance 30 / innovation_interaction 30 / bonus 0–5
+L00862 evidence_requirement_topicF | real on-chain transaction hashes
+L00863 deadline | 2026-10-20 23:59 UTC+8
+L00864 unspecified | chains, tokens, testnet_vs_mainnet, bonus_criteria, human_approval_policy
+L00865 recommended_concept | C1 PayGuard AP + C13 + C21
+L00866 recommended_chain | Base Sepolia (pending OCN)
+L00867 core_controls | Safe owner-only registry; Zodiac Roles 2.1.1 OneOf recipients; WithinAllowance; CallWithinAllowance; Delay 1.1.1 slow lane; pre-signed role revocation
+L00868 concept_id | name | rank | confidence | max_loss_if_compromised | key_dependency
+L00869 C1 | PayGuard AP | 1 | medium-high | ≤ daily allowance to registered vendors only | Zodiac Roles/Delay
+L00870 C6 | Defensive-Only Sentinel | 2 | medium | ~0 (DoS only) | Zodiac Roles
+L00871 C3 | Milestone Escrow Arbiter | 3 | medium | escrow balance needs quorum | custom escrow
+L00872 C2 | Runway Autopilot | 4 | low-medium | vault contract risk | lending vault
+L00873 C4 | x402 Budget Steward | 5 | medium | session cap | x402 facilitator
+L00874 Conclusions
+L00875 Strongest evidence-backed idea: C1 PayGuard. It rests on a documented loss category (BEC, $3.05B in 2025), audited on-chain permissions, and failure modes judges can verify.
+L00876 Most original but higher-risk idea: C6, defensive-only authority, where a compromised agent can only make funds safer. Its novelty is unverified.
+L00877 Safest implementable idea: C4 x402 Budget Steward with tiny session caps. It is easy to build but low on novelty.
+L00878 Best hybrid: an "obligation-aware treasury agent" that combines C1, C2, C6, C13 and C21: pay registered obligations, keep a runway buffer, switch to defensive mode on threat, anchor every decision, and invite attacks against a bounded prize.
+L00879 Avoid: an autonomous LLM trading or yield-maximizing bot (and cross-chain rebalancing). It looks impressive, but it adds oracle, MEV and bridge risk, has weak problem value, and its outcomes cannot be judged in 10 minutes.
+L00880 Three experiments to run before committing:
+L00881 E1: recipient-substitution attack that reverts on-chain.
+L00882 E2: allowance race and duplicate payment.
+L00883 E5: written organizer confirmation on testnet hashes and bonus criteria.
+L00884 Caveats
+L00885 Several product claims come from vendor marketing or secondary explainers, including Crossmint's comparison pages, eco.com explainers and Nevermined's blog. They are labelled as vendor claims where relevant.
+L00886 The "Five Attacks on x402", ADI, AutoDojo and ERC-8004 studies are 2026 preprints.
+L00887 AIXBT's loss is attributed by its maintainer to a dashboard compromise, not to model manipulation.[55][57]
+L00888 No experiment in this report has been run. Every test result above is a proposed acceptance criterion.
+L00889 Sources
+L00890 https://www.its.ac.id/international/wp-content/uploads/sites/66/2026/10/PBCSF-Appendix-2-Problem-Description-and-Competition-Rules-for-International-Track.pdf
+L00891 Agentic Wallet CLI - Coinbase Developer Documentation
+L00892 Coinbase Agentic Wallets Explained
+L00893 Agent Stack: Financial Infrastructure for the Agentic Economy
+L00894 Kite Launches Kite Chain and Kite Agent Passport, Enabling Autonomous AI Agent Payments
+L00895 AutoDojo: A Generative Benchmark for Evaluating Prompt Injection Defenses in LLM Agents
+L00896 Zodiac Docs
+L00897 IEEE CIS - Singapore - 2026 FinTechathon
+L00898 Upcoming Event | 2026 Shenzhen International FinTech Competition (FinTechathon) – International Track – International Relations Administration Center
+L00899 FAQ - Coinbase Developer Documentation
+L00900 x402/specs/schemes/exact/scheme_exact_evm.md at main · coinbase/x402
+L00901 GitHub - nirholas/x402-facilitator: x402 payment facilitator — verifies and settles EIP-3009 micropayments multichain. v2 facilitator.
+L00902 FAQ - Coinbase Developer Documentation
+L00903 GitHub - x402-foundation/x402: A payments protocol for the internet. Built on HTTP. · GitHub
+L00904 x402 SDK Security Advisory
+L00905 Malware in x402-legacy - vulnerability database
+L00906 Five Attacks on x402 Agentic Payment Protocol
+L00907 x402/specs/x402-specification-v2.md at main · coinbase/x402
+L00908 AI Agent Wallets
+L00909 Introducing Amazon Bedrock AgentCore Payments, Powered by x402 and Coinbase
+L00910 Privy Blog
+L00911 Agent Wallets Compared: Crossmint, Privy, Turnkey, Coinbase, lobster.cash
+L00912 How to Provision Privy Agent Wallets for USDC (2026)
+L00913 Turnkey’s Policy Engine: Guardrails for web3 transactions
+L00914 Agentic Wallets - Turnkey
+L00915 Turnkey policy engine for wallets
+L00916 Smart Wallets by Crossmint
+L00917 Circle’s USDC enables AI agents to bypass paywalls with micropayments
+L00918 Circle launches Agent Stack for AI payments infrastructure
+L00919 Enabling The Agentic Economy with Nanopayments
+L00920 How to Enable Nevermined x402 USDC Payments for AI Agents (2026)
+L00921 Skyfire KYAPay and the Know Your Agent (KYA) Framework Explained (2026)
+L00922 Skyfire Agents Mimic Humans to Shop, Sign Up and Pay Alone
+L00923 Know Your Agent (KYA): Identity for Agent Payments
+L00924 Commerce Layer
+L00925 Otto AI ACP — Three active agents on Virtuals ACP
+L00926 Virtuals ACP: Markets for Machines
+L00927 ERC-8183: Agentic Commerce
+L00928 What is ERC-8004? The Ethereum Standard Enabling Trustless AI Agents
+L00929 Agent-to-Agent Finance: Blockchain Payments and Trust Infrastructure for Autonomous AI Agents
+L00930 metamask/delegation-toolkit
+L00931 GitHub - MetaMask/smart-accounts-kit: A Viem-based Toolkit for integrating embedded smart contract wallets into dapps. · GitHub
+L00932 How to use MetaMask Smart Accounts with permissionless.js
+L00933 ERC-7715 Explained: Wallet Permissions, Sessions, and Subscriptions
+L00934 GitHub - erc7579/smartsessions · GitHub
+L00935 What Is Rhinestone? ERC-7579 Smart Accounts
+L00936 GitHub - gnosisguild/zodiac-modifier-roles: Smart account toolkit for role-based access control · GitHub
+L00937 Zodiac Docs
+L00938 Zodiac Docs
+L00939 Introducing the Agent Payments Protocol
+L00940 Google and Mastercard's answer to "can I trust an AI agent to pay for this" is a cryptographic mandate
+L00941 [2503.16248] Real AI Agents with Fake Memories: Fatal Context Manipulation Attacks on Web3 Agents
+L00942 Agentic security: How to protect critical assets in AI-driven systems
+L00943 Hacking Crypto AI Trading Agents: The $47K Prompt Injection Heist
+L00944 Hacker breaks into AI crypto bot aixbt’s dashboard to snatch 55 ETH
+L00945 AiXBT agent hacked, loses 55.50 ETH as token tumbles 16%
+L00946 Hacker Exploits AI Crypto Bot AIXBT, Steals 55 ETH
+L00947 Zodiac Docs
+L00948 Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents
+L00949 AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents
+L00950 agentdojo/CLAUDE.md at main · ethz-spylab/agentdojo
+L00951 Five Attacks on x402 Agentic Payment Protocol
+L00952 Autonomous Agents on Blockchains: Standards, Execution Models, and Trust Boundaries
+L00953 Identity Management for Agentic AI: The new frontier of authorization, authentication, and security for an AI agent world
+L00954 Dashboard Disaster: AI Crypto Bot Aixbt Loses 55 ETH in Late-Night Hack - MoneyCheck
+L00955 Get Funds - Base Documentation
+L00956 USDC Faucet: How to Get Free Testnet USDC Across Multiple Networks
+L00957 JSON-RPC Reference - Tenderly
+L00958 tenderly_simulateTransaction - Ethereum Sepolia Reference - Node RPC
+L00959  ↵ <response 2 end >

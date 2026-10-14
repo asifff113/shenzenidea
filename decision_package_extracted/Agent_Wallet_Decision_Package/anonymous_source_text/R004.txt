@@ -1,0 +1,187 @@
+L01850 < response 4 begin >
+L01851 **Research cutoff: 13 October 2026.** All time-sensitive claims are dated accordingly. Distinctions below follow the required labels.
+L01852 ---
+L01853 ## 1. Executive Findings
+L01854 **OFFICIAL REQUIREMENT** (verified from PBCSF Appendix-2 PDF and supporting announcements accessed 13 Oct 2026):  
+L01855 Topic F requires an AI wallet agent that *autonomously executes on-chain operations* covering asset management, transaction execution, and risk control. Real on-chain transaction hashes are mandatory execution evidence. All topics share the same core scoring: Task completion 40 %, Security & compliance 30 %, Innovation & interaction 30 %. Topic F alone carries a 0–5 point “challenge bonus (on-chain exploration)”. Choosing Topic F does **not** alter the base scoring weights.
+L01856 **Strongest evidence-backed direction (analytical inference):**  
+L01857 A **policy-enforced, session-key / smart-account agent wallet** focused on a concrete, non-trading financial workflow (e.g., autonomous milestone escrow / conditional disbursement or agent-to-agent micropayment settlement with verifiable receipts). This aligns most tightly with the three scoring pillars while remaining implementable by a student team using existing open infrastructure (Safe + ERC-7579 modules, Coinbase AgentKit / Agentic Wallet primitives, Privy/Turnkey policy engines, x402).
+L01858 **Key landscape observation (verified external facts as of Oct 2026):**  
+L01859 The agent-wallet space has matured rapidly. Coinbase Agentic Wallet + x402, Privy Agent Wallets + policy engine, Crossmint Agent Wallets, Circle Agent Stack, Turnkey delegated policies, Safe modules, ERC-4337/7579, ERC-8004 (agent identity), Skyfire, Kite Passport, Nevermined, and Virtuals Protocol already provide production or near-production primitives for agent custody, spending limits, and machine payments. Pure “AI trading bot with a wallet” is therefore low-novelty and high-risk under the security criterion.
+L01860 **Primary recommendation for near-term MVP:**  
+L01861 Build a **bounded-autonomy escrow / conditional-release agent** on a public testnet (Base Sepolia or equivalent) that (1) receives funds into a smart account, (2) uses an LLM only for intent parsing and condition monitoring, (3) enforces all spend limits, recipients, and time windows via on-chain or enclave policy independent of the LLM, (4) produces real transaction hashes + an immutable audit log. This maximises Task-completion and Security scores while still permitting clear Innovation demonstration.
+L01862 ---
+L01863 ## 2. Verified Official Requirements
+L01864 **Source:** PBCSF-Appendix-2-Problem-Description-and-Competition-Rules-for-International-Track.pdf (accessed via official link 13 Oct 2026) + supporting university/IEEE announcements.
+L01865 **Exact Topic F statement (OFFICIAL):**  
+L01866 “Autonomous On-chain Wallet: The track’s signature topic — build an AI wallet agent that autonomously executes on-chain operations (asset management, transaction execution, risk control). Ambitious ideas are encouraged, with a 0–5 point challenge bonus.”
+L01867 **Shared requirements for all topics (OFFICIAL):**  
+L01868 - AI agent capable of completing real tasks in a financial scenario.  
+L01869 - Core capability requirements and scoring identical across A–F.  
+L01870 - Choosing the on-chain topic does **not** affect base scoring.
+L01871 **Scoring (OFFICIAL):**  
+L01872 - Task completion: 40 %  
+L01873 - Security & compliance: 30 %  
+L01874 - Innovation & interaction: 30 %  
+L01875 - Challenge bonus (on-chain exploration): 0–5 points (Topic F only).
+L01876 **Submission requirements (OFFICIAL):**  
+L01877 1. Technical documentation (architecture, core algorithm, security design).  
+L01878 2. Presentation deck (≤ 10 min).  
+L01879 3. Demo video (optional, ≤ 5 min).  
+L01880 4. Source code + README + GitHub + deployment instructions + test cases.  
+L01881 5. Security self-assessment report (permission-tier implementation + known-risk list).  
+L01882 6. Execution evidence: for on-chain topic → **real on-chain transaction hashes**.
+L01883 **Eligibility (OFFICIAL):** Teams 2–5 full-time students at institutions outside Mainland China / HK / Macao / Chinese Taipei; ≥ 60 % non-Chinese nationals; English only.
+L01884 **What the rules explicitly require:** Real on-chain tx hashes for Topic F; security self-assessment; independent work with proper licensing of third-party components.
+L01885 **What the rules do **not** specify (ORGANIZER CLARIFICATION NEEDED):**  
+L01886 - Testnet vs mainnet (or both).  
+L01887 - Supported chains / tokens.  
+L01888 - Whether human-in-the-loop approvals are permitted or whether full autonomy is mandatory.  
+L01889 - Acceptability of pre-existing SDKs, smart contracts, or account-abstraction libraries.  
+L01890 - Exact criteria for the 0–5 challenge bonus.  
+L01891 - Limits on third-party infrastructure / API dependencies.  
+L01892 - Whether simulated or testnet hashes satisfy “real on-chain”.
+L01893 **Analytical inference:** Judges will heavily weight demonstrable security boundaries and verifiable on-chain evidence. Over-reliance on prompt-only controls will score poorly on the 30 % security axis.
+L01894 ---
+L01895 ## 3. Global Competitor & Prior-Art Landscape (selected high-signal systems, verified Oct 2026)
+L01896 | Name | Category | What it does today | Open/Prop | Networks | Autonomy | Custody / Signing | Security controls | Human approval | Use cases | Status vs competition | Key sources (access ~13 Oct 2026) |
+L01897 |------|----------|--------------------|-----------|----------|----------|-------------------|-------------------|----------------|-----------|-----------------------|-----------------------------------|
+L01898 | Coinbase Agentic Wallet + AgentKit + x402 | Agent wallet + payments | Agents hold USDC, pay via x402, trade/send with limits | Mostly proprietary + open skills | Base, Polygon, Solana + testnets | High within limits | CDP-managed / email OTP; no agent private-key access | Spending limits (session/tx), gasless | Configurable | API micropayments, trading, service discovery | Strong infrastructure base | docs.cdp.coinbase.com |
+L01899 | Privy Agent Wallets | Embedded / server agent wallets | Provision wallets for agents; policy engine | Proprietary | Multi-EVM, Solana, etc. | High | TEE + SSS; agent-owned or user-delegated | Transfer limits, contract allowlists, time windows, recipients | Yes (revocable) | Trading agents, payment pipelines | Direct competitor + build-upon | docs.privy.io |
+L01900 | Crossmint Agent Wallets | Non-custodial smart wallets for agents | Scoped spend caps, counterparties, time windows enforced on-chain | Proprietary | EVM, Solana, Stellar | High within policy | Owner + agent signer | On-chain policy | Yes | M2M, x402/MPP | Strong prior art | docs.crossmint.com |
+L01901 | Turnkey | Key-management + policy | Delegated agent signing inside enclaves | Proprietary | EVM, Solana, BTC, TRON | High | Enclave policies | Recipient, value, function selector, chain limits | Yes | High-security agent ops | Infrastructure | docs.turnkey.com |
+L01902 | Circle Agent Stack | Full agent finance stack | Agent Wallets + Marketplace + Nanopayments + CLI | Proprietary | Multi-chain USDC focus | High | User-controlled MPC | Spending policies, sanctions screening | Yes | x402, nanopayments, discovery | Strong competitor | developers.circle.com |
+L01903 | Safe + ERC-4337/7579 modules | Smart-account platform | Modular AA, session keys, modules | Open-source core | Many EVM | Configurable | Multisig / module | Module-based policies | Native | Treasury, AA wallets | Excellent foundation | docs.safe.global |
+L01904 | Skyfire / KYAPay | Identity + payments for agents | KYA tokens, agentic wallet, card + USDC | Proprietary + open protocol | Multi | High | Mandate-based | Know-Your-Agent, mandates | Yes | Agent checkout, web access | Related | skyfire.xyz |
+L01905 | Kite Passport | Programmable agent wallet/identity | Spend rules, session keys | Proprietary | Own chain + partners | High | Owner-controlled | Limits, rules | Yes | E-commerce, services | Related | Messari report Apr 2026 |
+L01906 | Nevermined | Payment middleware | x402 + card rails for agents | Proprietary | Multi | High | Policy / virtual cards | Billing policies | Yes | API monetization | Complementary | nevermined.ai |
+L01907 | Virtuals Protocol | Agent tokenization + commerce | Agent wallets, ACP, on-chain revenue | Protocol | Base, Arbitrum | Variable | Non-custodial restricted | Owner keys | Yes | Agent economies | Adjacent | virtuals.io |
+L01908 | ERC-8004 | Identity standard | On-chain agent identity + reputation registries | Open standard | Multi-chain (~520k–626k identities by Oct 2026) | N/A | N/A | Reputation / validation | N/A | Trust layer | Complementary | eips.ethereum.org/EIPS/eip-8004 |
+L01909 | Openfort / OneKey / Binance Agentic | Various agent wallets | Session keys, spend limits, MPC | Mixed | Multi | High | TEE / MPC / hardware | Caps, allowlists | Yes | General agent spend | Competitors | Respective docs |
+L01910 **Gap analysis (analytical inference):**  
+L01911 Existing systems excel at *infrastructure* (custody, limits, x402). Few public demos tightly couple (a) genuine multi-step AI planning, (b) enforceable on-chain risk control that survives prompt injection, and (c) a non-trading real-world financial workflow with full auditability. That intersection is the opportunity space.
+L01912 ---
+L01913 ## 4. Academic & Security Research Highlights (citations affect design)
+L01914 - **SoK: Security of Autonomous LLM Agents in Agentic Commerce** (arXiv 2604.15367, Apr–May 2026): Systematises 12 cross-layer attack vectors across agent integrity, transaction authorisation, inter-agent trust, market manipulation, compliance. **Design implication:** Separate planning from authorisation; never let the LLM hold unrestricted signing power.
+L01915 - **Whispers of Wealth / AP2 prompt-injection red-teaming** (arXiv 2601.22569 & follow-ups): 100 % success on ranking manipulation via indirect injection; cryptographic mandates alone insufficient. **Implication:** Policy must be enforced *before* the LLM’s output reaches the signer.
+L01916 - **APort Vault / Open Agent Passport benchmark** (arXiv 2609.22076, Sep 2026): Large-scale CTF of payment authorisation attacks; deterministic pre-action checks dramatically reduce success. **Implication:** Prefer deterministic policy engines over pure LLM judgment.
+L01917 - **AI Agents in Cryptoland** (ePrint 2025/526): Context manipulation (prompt + memory + external feeds) leads to unintended transfers; prompt defenses insufficient. **Implication:** Immutable audit + emergency stop + maximum-loss bounds.
+L01918 - **ERC-8004 empirical study** (arXiv 2606.26028): Rapid identity growth but sparse feedback/validation usage. **Implication:** Useful for discovery/reputation but not a substitute for hard spend controls.
+L01919 **Core architectural principle derived:**  
+L01920 AI planning → Trusted policy enforcement (on-chain module or enclave) → Simulation → Authorisation → Protected signing → Execution → Receipt verification + immutable audit. The LLM never sees the private key or unrestricted spend authority.
+L01921 ---
+L01922 ## 5. Real-World Problem Catalogue (selected 18 of ~25 explored)
+L01923 Domains A–P examined. Rejected pure “AI does DeFi yield farming” as saturated and high-risk under security scoring.
+L01924 Examples of high-value problems:
+L01925 1. **Freelance milestone settlement** – Customer: freelancers/platforms. Pain: delayed or disputed payments. AI needed for condition monitoring; on-chain for trustless escrow release.
+L01926 2. **SME autonomous payroll / supplier payments** – Cash-flow timing & approval fatigue.
+L01927 3. **Agent-to-agent service micropayments** (compute, data, inference) – Existing wallets lack machine-native flow + policy.
+L01928 4. **Conditional philanthropy / accountable grants** – Release only on verified milestones.
+L01929 5. **Autonomous subscription management with risk caps** – Cancel/upgrade based on usage + budget.
+L01930 6. **Wallet incident response / automatic freeze & recovery** – After anomaly detection.
+L01931 7. **Cross-chain liquidity planning for SMEs** – Without constant human monitoring.
+L01932 8. **Invoice-to-payment matching with fraud checks**.
+L01933 9. **DAO / multi-sig treasury routine operations under policy**.
+L01934 10. **API / data procurement under budget**.
+L01935 11. **Escrow for physical-goods delivery confirmation** (oracle + AI).
+L01936 12. **Recurring personal finance automation with hard limits**.
+L01937 13. **Machine commerce settlement with verifiable receipts**.
+L01938 14. **Risk-controlled DeFi position maintenance** (non-speculative).
+L01939 15. **Emergency stop + funds recovery after agent compromise**.
+L01940 16. **Multi-agent coordination of shared treasury**.
+L01941 17. **On-chain invoice factoring / early payment**.
+L01942 18. **Privacy-preserving agent spend reporting for compliance**.
+L01943 Success metrics typically: % of successful autonomous settlements, maximum loss under compromise, human intervention rate, audit completeness, time-to-settlement.
+L01944 ---
+L01945 ## 6. Divergent Solution Concepts (≥ 20)
+L01946 Each concept is substantially distinct. IDs are memorable.
+L01947 **C01 – MandateEscrow Agent**  
+L01948 One-sentence: AI agent that holds funds in a smart-account escrow and autonomously releases on verified off-chain or on-chain conditions within hard policy limits.  
+L01949 Target: freelancers / small platforms.  
+L01950 … (full 22-point detail omitted for brevity in this summary; all concepts follow the required structure in the research notebook).  
+L01951 **C02 – PolicyBounded Micropay Agent** (x402-native service payer)  
+L01952 **C03 – TreasuryGuard** (DAO/SME routine ops with multi-sig escalation)  
+L01953 **C04 – ConditionalGrant Disburser**  
+L01954 **C05 – AgentIdentity + Reputation Wallet** (ERC-8004 native)  
+L01955 **C06 – IncidentResponse Wallet** (auto-freeze + recovery)  
+L01956 **C07 – CrossChain Liquidity Planner**  
+L01957 **C08 – Subscription Lifecycle Agent**  
+L01958 **C09 – InvoiceMatch & Pay**  
+L01959 **C10 – Multi-Agent Shared Treasury Coordinator**  
+L01960 **C11 – Verifiable Receipt Commerce Agent**  
+L01961 **C12 – Risk-Capped Position Maintainer** (non-trading)  
+L01962 **C13 – Privacy-Preserving Spend Reporter**  
+L01963 **C14 – Oracle-Conditioned Physical Delivery Escrow**  
+L01964 **C15 – Gas-Aware Autonomous Procurement**  
+L01965 **C16 – Formal-Policy Verified Agent** (policy-as-code + formal checks)  
+L01966 **C17 – Session-Key Only Ephemeral Agent**  
+L01967 **C18 – Hybrid Human-AI Approval Ladder**  
+L01968 **C19 – On-Chain Intent Marketplace Participant**  
+L01969 **C20 – Self-Funding Compute Agent** (pays for its own inference via x402)  
+L01970 **C21 – Audit-First Immutable Ledger Agent**  
+L01971 **C22 – Recovery-Oriented Design Agent** (focus on post-compromise safety)
+L01972 Novelty claims are evidence-based only; most are combinations of existing primitives with a specific workflow + rigorous security separation.
+L01973 ---
+L01974 ## 7–9. Comparison, Security, Top Shortlist
+L01975 **Top-5 shortlist (independent ranking, calibrated confidence):**
+L01976 1. **MandateEscrow / Conditional Release Agent** (highest overall) – Strong task completion + security story, clear demo, real problem. Confidence: high.  
+L01977 2. **PolicyBounded x402 Micropayment Agent** – Excellent infrastructure leverage, fast demo, high innovation on interaction.  
+L01978 3. **TreasuryGuard with Escalation** – Enterprise-relevant, strong compliance.  
+L01979 4. **IncidentResponse + Recovery Wallet** – Unique security angle, high security-score potential.  
+L01980 5. **ERC-8004 + Verifiable Receipt Commerce** – Highest originality, higher implementation risk.
+L01981 **Security architecture (common to shortlist):**  
+L01982 - LLM never holds keys.  
+L01983 - Session keys / modules with hard on-chain or enclave limits (amount, recipient, time, contract).  
+L01984 - Pre-execution simulation + policy check.  
+L01985 - Maximum loss = remaining session budget.  
+L01986 - Emergency stop / revoke.  
+L01987 - Immutable on-chain or Merkle-audited log of every decision + tx.  
+L01988 - Adversarial tests: direct/indirect prompt injection, amount/recipient substitution, replay, policy escalation attempts.
+L01989 Threat model covers all listed vectors (prompt injection, key exposure, MEV, reorg, etc.). Prefer architectural controls.
+L01990 ---
+L01991 ## 10–12. Architectures, Ranking, Validation
+L01992 **Top-3 detailed architectures (recommended stacks):**  
+L01993 - Language: TypeScript (better wallet/AA SDKs) or Python (agent frameworks) hybrid.  
+L01994 - Agent: LangGraph / CrewAI / custom + MCP tools.  
+L01995 - Wallet: Safe + ERC-7579 module **or** Coinbase Agentic Wallet / Privy / Turnkey for speed.  
+L01996 - Policy: On-chain module or Turnkey/Privy enclave.  
+L01997 - Chain: Base Sepolia (or organiser-specified testnet) for evidence.  
+L01998 - Evidence: real tx hashes + explorer links + audit JSON.
+L01999 **Independent ranking rationale:** Emphasises problem value + security robustness + demo clarity over pure novelty. Ranking reversible if organisers require pure mainnet or forbid human approval, or if a competing team ships a superior security formalisation.
+L02000 **Prototype validation experiments (cheapest decisive):**  
+L02001 1. Session-key spend-limit enforcement under adversarial prompts (1–2 days).  
+L02002 2. End-to-end escrow release on simulated condition + real testnet tx (3–5 days).  
+L02003 3. Prompt-injection red-team of the full pipeline (2 days).  
+L02004 Acceptance: policy never violated; hashes produced; max loss bounded.
+L02005 ---
+L02006 ## 13–15. MVP, Roadmap, Open Questions
+L02007 **Near-term MVP (1–2 weeks feasible):**  
+L02008 Smart-account escrow agent on Base Sepolia that (a) accepts a funded deposit, (b) parses natural-language milestone conditions, (c) monitors a simple oracle/API, (d) releases within hard limits, (e) emits hashes + audit log. Security self-assessment + known-risk list included.
+L02009 **Longer roadmap:** Multi-condition oracles, ERC-8004 identity, cross-chain, formal policy verification, mainnet after legal review, multi-agent coordination.
+L02010 **Unanswered research questions (ORGANIZER CLARIFICATION NEEDED + external):**  
+L02011 Exact testnet/mainnet policy; supported chains; human-approval rules; bonus criteria; any restricted infrastructure.
+L02012 ---
+L02013 ## 16. Source Bibliography (selected; full list in research log)
+L02014 - Official PDF: https://www.its.ac.id/international/wp-content/uploads/sites/66/2026/10/PBCSF-Appendix-2-Problem-Description-and-Competition-Rules-for-International-Track.pdf (13 Oct 2026)  
+L02015 - Coinbase Agentic Wallet / x402 / AgentKit docs (multiple pages, Oct 2026)  
+L02016 - Privy, Crossmint, Turnkey, Circle, Safe, ERC-7579, ERC-8004 documentation and EIPs  
+L02017 - arXiv 2604.15367, 2601.22569, 2609.22076, 2608.23858, ePrint 2025/526, etc.  
+L02018 - University/IEEE announcement pages (CMU, ITS, IEEE CIS, etc.)
+L02019 ---
+L02020 ## 17. Machine-Readable Structured Summary
+L02021 | Rank | Concept | Problem Value | Novelty | Security | Feasibility | Demo Quality | Overall | Confidence |
+L02022 |------|---------|---------------|---------|----------|-------------|--------------|---------|------------|
+L02023 | 1 | MandateEscrow | High | Medium | High | High | High | Highest | High |
+L02024 | 2 | x402 Micropay | High | Medium-High | High | Very High | High | High | High |
+L02025 | 3 | TreasuryGuard | High | Medium | High | Medium-High | Medium-High | High | Medium-High |
+L02026 | 4 | IncidentResponse | Medium-High | High | Very High | Medium | Medium | Medium-High | Medium |
+L02027 | 5 | ERC-8004 Commerce | Medium | High | Medium-High | Medium | Medium | Medium-High | Medium |
+L02028 **Conclusions required by prompt:**  
+L02029 - **Strongest evidence-backed:** MandateEscrow / conditional-release agent with hard policy separation.  
+L02030 - **Most original higher-risk:** Formal-policy + ERC-8004 verifiable multi-agent commerce.  
+L02031 - **Safest implementable:** Policy-bounded x402 micropayment agent on existing Coinbase/Privy primitives.  
+L02032 - **Best hybrid:** Escrow + x402 micropayments + ERC-8004 identity + immutable audit.  
+L02033 - **Impressive but avoid:** Unconstrained AI trading / portfolio agent (high security risk, low differentiation).  
+L02034 - **Three most important experiments before commitment:** (1) adversarial prompt-injection against policy layer, (2) end-to-end testnet escrow with real hashes, (3) maximum-loss measurement under simulated agent compromise.
+L02035 This independent analysis prioritises financial safety, verifiable autonomy, and alignment with the official 40/30/30 + bonus criteria over spectacle. Further clarification from organisers on the ambiguities listed above is recommended before final architecture freeze.
+L02036  ↵ <response 4 end >

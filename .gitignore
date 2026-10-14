@@ -1,0 +1,20 @@
+# JavaScript dependencies and build output
+app/node_modules/
+app/dist/
+
+# TypeScript/Vite local caches
+app/*.tsbuildinfo
+
+# Local runtime logs
+app/*.log
+*.log
+
+# Editor and OS metadata
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Environment files may contain local credentials
+.env
+.env.*
+!.env.example

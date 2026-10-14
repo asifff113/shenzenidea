@@ -1,0 +1,18 @@
+L03225 < response 7 begin >
+L03226 I'll conduct this deep research systematically: verify official sources first, then map the competitor landscape, academic research, problems, concepts, security, and strategy — then deliver the report as a canvas.
+L03227 Task 1: Verifying official sources. Opening all three official competition URLs now.
+L03228 ✅ Official requirements verified. Key confirmed facts: Topic F is "Autonomous On-chain Wallet," scoring is 40/30/30 + 0–5 bonus, the submission checklist requires a security self-assessment with "permission-tier implementation and known-risk list", and execution evidence for the on-chain topic is "real on-chain transaction hashes."
+L03229 Task 2: Competitor landscape research — running the first broad batch of searches.
+L03230 Batch 1 results captured. Running batch 2 (more competitors + standards):
+L03231 Strong landscape signals (OKX Agentic Wallet, agentwallet.md comparison of 34 wallets, Circle escrow agent). Now batch 3 — academic & security research, plus key standards:
+L03232 Rich academic findings. Let me extract the batch-1 results I haven't seen yet (Privy, Turnkey, Crossmint, Circle, Nevermined), and open key primary sources in parallel:
+L03233 Now opening key primary sources for deeper evidence, plus a final search batch (WeBank angle, Coinbase Agentic Wallet, payroll/treasury problems, past winners):
+L03234 I now have comprehensive evidence across official requirements, the commercial landscape, standards, and academic research. Loading the canvas skill to produce the final report:
+L03235 All research complete. Now writing the report canvas in sections:
+L03236 The report is complete. I noticed a section-numbering offset between the TOC and body (skipped §11). Fixing the numbering and cross-references:
+L03237 Body numbering is now clean (1–20). Updating the TOC to match:
+L03238 The deep research is complete — the full report is now open in the canvas. Here's the top-line summary:
+L03239 Key verified finding: The official rules require a security self-assessment with a "permission-tier implementation and known-risk list" and "real on-chain transaction hashes" as execution evidence, with scoring 40/30/30 plus a 0–5 on-chain bonus (official problem description PDF). Meanwhile, my landscape research across ~28 systems (Coinbase AgentKit/x402/Agentic Wallets, Safe + ERC-7579, Privy, Turnkey, Crossmint, Circle, OKX, Cobo, etc.) found the market crowded at the wallet-SDK layer but empty at the verifiable-autonomy layer: no inspected product produces publicly verifiable, on-chain-anchored decision records — the exact gap a January 2026 academic survey independently identified (survey, arXiv:2601.04583).
+L03240 Recommendation: AEGIS — a permission-tiered, evidence-first agent wallet: an AI planner emitting typed intents → deterministic on-chain-enforced policy tiers (Safe + ERC-7579 session-validation modules, so a compromised LLM can't overrule them) → simulation → execution → EAS-attested Policy Decision Records. Demonstrated via x402-style API procurement and milestone escrow on Base Sepolia, with a live prompt-injection attack the architecture survives — receipts included.
+L03241 The canvas contains all 10 research tasks: verified official requirements and ambiguities, the full competitor table, academic findings, 18 problems, 22 concepts, a 25-threat security model, ranked shortlist, feasibility plan, and the three decisive experiments to run before committing (E1 policy-tier enforcement, E2 injection wall, E3 x402 receipt loop).
+L03242  ↵ <response 7 end >

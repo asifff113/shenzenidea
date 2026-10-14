@@ -1,0 +1,112 @@
+[
+  {
+    "file": "Agent_Wallet_Decision_Report.md",
+    "bytes": 236121,
+    "sha256": "935f679511417f508a46d507ce4155865d390c7180ecdca5bfc9b4a5987341e0"
+  },
+  {
+    "file": "Executive_Decision_Memo.md",
+    "bytes": 3833,
+    "sha256": "ac8a35a3c11fcee732ff5b0caca0d2e97c504197ce6ae4a4f8c869f0444866b4"
+  },
+  {
+    "file": "README.md",
+    "bytes": 1483,
+    "sha256": "18c982d2c10338f14c21bd406909f5723bdeca875ffe251168c78c1691e41b3d"
+  },
+  {
+    "file": "anonymous_source_text/R001.txt",
+    "bytes": 83695,
+    "sha256": "e322fe801a66945e47b3717b2d7d4259a739056317680d1ff3def22169443478"
+  },
+  {
+    "file": "anonymous_source_text/R002.txt",
+    "bytes": 56653,
+    "sha256": "67394cf819dcf31340b74d00f0dc951b15dceee6639f542ded5f7aa81453636c"
+  },
+  {
+    "file": "anonymous_source_text/R003.txt",
+    "bytes": 62922,
+    "sha256": "3547180645a2f7f3755995a92938beecd4482f2d154e453bbf4dd377b4a97cd9"
+  },
+  {
+    "file": "anonymous_source_text/R004.txt",
+    "bytes": 21308,
+    "sha256": "74f8f32903c17c74f3d62cf1d5595badf3c648f3b686eccd259797af439c8873"
+  },
+  {
+    "file": "anonymous_source_text/R005.txt",
+    "bytes": 134004,
+    "sha256": "0541f7a4a3a53ff1876479414b5e6901315d76d10101321ad5c51cd136aedf31"
+  },
+  {
+    "file": "anonymous_source_text/R006.txt",
+    "bytes": 92273,
+    "sha256": "b5daecf7f98a99f8f6d0332399b4ebf03256de3aaf7dd889dcff6f3577da752d"
+  },
+  {
+    "file": "anonymous_source_text/R007.txt",
+    "bytes": 3605,
+    "sha256": "638c2ea4b1f07c7f2a3900a72fda93db25e3af32da316634e3fecbc91ae5b81c"
+  },
+  {
+    "file": "anonymous_source_text/R008.txt",
+    "bytes": 66690,
+    "sha256": "45f9da62a1668903fba2532871c57c84a0a4e754d0b614ecae7bd6785e5c311b"
+  },
+  {
+    "file": "anonymous_source_text/R009.txt",
+    "bytes": 29239,
+    "sha256": "7a27d0761105fb44c4c73f70de0f51031de3fdef3c4e52c64e074ea65a1a5e43"
+  },
+  {
+    "file": "anonymous_source_text/R010.txt",
+    "bytes": 98082,
+    "sha256": "7b32b07c3408da5c0b3ead0daa9b7fbafcbff26f74fb7a79f1ec3e6c73fecd42"
+  },
+  {
+    "file": "anonymous_source_text/R011.txt",
+    "bytes": 45665,
+    "sha256": "2164e536140cd243d61d411b469f4bdc9228847517db91f14aaa0ca374677256"
+  },
+  {
+    "file": "anonymous_source_text/R012.txt",
+    "bytes": 37696,
+    "sha256": "d449d8de3585f626b36e9f740eb53524a517797285eccd696d26e5acb4e6b23b"
+  },
+  {
+    "file": "anonymous_source_text/R013.txt",
+    "bytes": 69701,
+    "sha256": "0d725b84677e14d80f26b9a031f5a5f6e57f46f489adfc95a4a33e19e92fd99b"
+  },
+  {
+    "file": "anonymous_source_text/R014.txt",
+    "bytes": 44140,
+    "sha256": "12244db353ae2aab15f7c6090ce8ea08eef07682cfe90fb41a4e919f725f9b2e"
+  },
+  {
+    "file": "anonymous_source_text/source_blocks.json",
+    "bytes": 1113397,
+    "sha256": "8f103915898325b32813c84d2fe3c84ce83aff0c93fc8b77200b3ce9599ac15d"
+  },
+  {
+    "file": "idea_catalogue.md",
+    "bytes": 121271,
+    "sha256": "628aba5c61070821893030cd673f0022a27d5c3137beb911646efd8f7ce3e0cf"
+  },
+  {
+    "file": "original_concept_crosswalk.json",
+    "bytes": 120844,
+    "sha256": "815c079acf94b71cb68bfa2e2595a186a5615e940700738524c171294f20617d"
+  },
+  {
+    "file": "research_ledgers.json",
+    "bytes": 1057077,
+    "sha256": "bde8f8f4b96d67c21538484d0278b57170e2547845c16bfd2ed8e7867527dec5"
+  },
+  {
+    "file": "source_table_rows.json",
+    "bytes": 383659,
+    "sha256": "678d27adaf9d53832938f6930560407657a10de5258cf4086638da88f1fcd07b"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "ui": {
+    "total": 245,
+    "translated": 240,
+    "missing": [],
+    "empty_in_en": [],
+    "identical_to_en": [
+      "explorer.filters.go",
+      "explorer.filters.conditional",
+      "explorer.filters.noGo",
+      "compare.byId",
+      "library.idCol"
+    ]
+  },
+  "fields": {
+    "total": 210,
+    "translated": 210,
+    "missing": []
+  },
+  "snapshot": {
+    "total": 319,
+    "translated": 319,
+    "missing": []
+  }
+}

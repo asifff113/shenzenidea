@@ -1,0 +1,40 @@
+{
+  "generated": "2026-10-14",
+  "files": {
+    "agent-wallet-post-audit-decision-summary.md": {
+      "sha256": "3af6cdbfa51f8acfdf4856c0723b429faa75185fcb1906b1328ffc0063d5aaf3",
+      "size_bytes": 2856,
+      "present": true
+    },
+    "agent_wallet_research_report.md": {
+      "sha256": "17135f13c322b6f058e5508a19124b23f59a046c9519a3a297c7bbb585415297",
+      "size_bytes": 69603,
+      "present": true
+    },
+    "Audit_Report.md": {
+      "sha256": "32e11f10f82828e4ec4e5e7664e2c070f9d2cc3089658a3f716fb975bf87626a",
+      "size_bytes": 24921,
+      "present": true
+    },
+    "claudeaudit.md": {
+      "sha256": "e7360bfc0e5a8b3391f80d72bab94e73751028fa56165ed9c64d1bcdd4baad3e",
+      "size_bytes": 64195,
+      "present": true
+    },
+    "finalaudit.md": {
+      "sha256": "152fef930e56e2acc0d7bec165bb6fa587ee533a787d8f5ba86691df38467d08",
+      "size_bytes": 95624,
+      "present": true
+    },
+    "master_inventory.csv": {
+      "sha256": "f57bd9c178e8076fcb96a2a5ea29c9a1cafe31e541ffb029618001a00616c37f",
+      "size_bytes": 81843,
+      "present": true
+    },
+    "master_inventory.json": {
+      "sha256": "d4d07f307c6e3cb041a02878d8ee741a6b29e0d00364274df94265a48eb0f1e1",
+      "size_bytes": 123952,
+      "present": true
+    }
+  }
+}

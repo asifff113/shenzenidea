@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 50% -200px, rgba(34, 179, 197, 0.07), transparent 60%),
+    radial-gradient(900px 500px at 100% 50%, rgba(217, 164, 65, 0.05), transparent 60%),
+    #06080d;
+  -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Mermaid container: pure SVG (no mermaid runtime) */
+.mermaid {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.code-like {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+  font-size: 0.85em;
+  letter-spacing: 0.01em;
+}
+
+/* Bengali (বাংলা) text rendering. Hind Siliguri is the primary face;
+   Noto Sans Bengali is the wide-coverage fallback. Both have proper
+   conjuncts, kerning, and OpenType shaping. */
+html[lang="bn"] body,
+html[lang="bn"] body * {
+  font-family: "Hind Siliguri", "Noto Sans Bengali", "Vrinda", "SolaimanLipi",
+    "Kalpurush", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+}
+.font-bn {
+  font-family: "Hind Siliguri", "Noto Sans Bengali", "Vrinda", "SolaimanLipi",
+    "Kalpurush", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
+/* Long Bengali text: better line-height and break behaviour */
+.font-bn {
+  line-height: 1.65;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+/* Tables wrap cells in Bengali without breaking layout */
+.font-bn table th,
+.font-bn table td {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+/* Code-like identifiers stay in mono even inside Bengali mode */
+.font-bn .code-like,
+.code-like {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, monospace;
+  font-feature-settings: "calt" 0;
+  letter-spacing: 0.01em;
+}
