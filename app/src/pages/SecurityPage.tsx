@@ -71,7 +71,7 @@ function TiersTable({ bn }: { bn: boolean }) {
           </thead>
           <tbody>
             {SECURITY_TIERS.map((s) => {
-              const bnTier = (bnSnapshot as any).security.tiers[s.id];
+              const bnTier = bn ? (bnSnapshot as any).security.tiers[s.id] : undefined;
               return (
                 <tr key={s.id} className="border-t border-ink-800 align-top">
                   <td className={`p-3 ${bn ? "font-bn" : ""}`}>

@@ -115,7 +115,7 @@ export function DecisionHistoryPage() {
       </h3>
       <div className="space-y-3">
         {TOP_THREE_VALIDATION.map((c) => {
-          const bnV = (bnSnapshot as any).topThreeValidation[c.id];
+          const bnV = bn ? (bnSnapshot as any).topThreeValidation[c.id] : undefined;
           return (
             <div key={c.id} className="rounded-xl border border-ink-800 bg-ink-900/40 p-4">
               <div className="flex items-center gap-2">

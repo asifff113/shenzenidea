@@ -3,6 +3,7 @@ import { useLang } from "./LanguageContext";
 import { fieldBn } from "../i18n/fieldHelpers";
 import { SideBySideParagraph, BilingualText } from "./BilingualText";
 import { useState } from "react";
+import { getPresentation } from "../data/presentation";
 
 interface SectionsProps {
   candidate: Candidate;
@@ -10,25 +11,24 @@ interface SectionsProps {
   lang: "en" | "bn";
 }
 
-function f(c: Candidate, field: string): string {
-  return fieldBn(c.id, field, (c as any)[field] ?? "");
-}
-
 /**
  * Renders the two-depth detail for a candidate. The "quick" depth shows a
- * distilled 3-bullet summary; the "technical" depth shows every field
- * verbatim with side-by-side bilingual rendering. Both depths translate
- * every field using fieldBn; missing translations fall back to the
- * English original with a clear "[অনুবাদ মুলতুবি]" label.
+ * three-bullet summary taken from the presentation layer, which carries an
+ * English and a Bengali form for every string (so English mode never shows
+ * Bengali and vice versa). The "technical" depth shows every record field
+ * through BilingualText, which keeps the original English accessible.
  */
 export function IdeaDetailSections({ candidate: c, depth, lang }: SectionsProps) {
   const t = useLang().t;
   if (depth === "quick") {
-    const problem = f(c, "tier1Problem") || c.financialProblem;
-    const attractive = f(c, "tier1Attractive");
-    const concern = f(c, "tier1Concern");
+    const pres = getPresentation(c.id);
+    const bn = lang === "bn";
+    const pick = (v: { en: string; bn: string }) => (bn ? v.bn : v.en);
+    const problem = pres ? pick(pres.quick.problem) : bn ? fieldBn(c.id, "financialProblem", c.financialProblem) : c.financialProblem;
+    const attractive = pres ? pick(pres.quick.why) : "";
+    const concern = pres ? pick(pres.quick.risk) : "";
     return (
-      <div className={`space-y-2 text-sm leading-relaxed ${lang === "bn" ? "font-bn" : ""}`}>
+      <div className={`space-y-2 text-sm leading-relaxed ${bn ? "font-bn" : ""}`}>
         <Bullet label={t("sections.B")}>{problem}</Bullet>
         {attractive && <Bullet label={t("sections.F")}>{attractive}</Bullet>}
         {concern && <Bullet label={t("sections.G")}>{concern}</Bullet>}
