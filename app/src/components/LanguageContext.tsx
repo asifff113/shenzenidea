@@ -15,6 +15,10 @@ function readInitialLang(): Lang {
     const url = new URL(window.location.href);
     const param = url.searchParams.get("lang");
     if (param === "bn" || param === "en") return param;
+    // HashRouter keeps its query inside the hash (e.g. #/explorer/ID?lang=bn).
+    const hashQuery = url.hash.includes("?") ? url.hash.slice(url.hash.indexOf("?") + 1) : "";
+    const hashParam = new URLSearchParams(hashQuery).get("lang");
+    if (hashParam === "bn" || hashParam === "en") return hashParam;
   } catch {
     /* not in a browser */
   }

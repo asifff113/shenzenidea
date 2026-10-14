@@ -5,6 +5,7 @@ import { GateBadge, DecisionBadge, PrototypeBadge } from "./Badges";
 import { IdeaDetailSections } from "./IdeaDetailSections";
 import { useLang } from "./LanguageContext";
 import { fieldBn } from "../i18n/fieldHelpers";
+import { getPresentation } from "../data/presentation";
 
 interface IdeaCardProps {
   candidate: Candidate;
@@ -14,6 +15,7 @@ interface IdeaCardProps {
 
 export function IdeaCard({ candidate: c, expanded, onToggle }: IdeaCardProps) {
   const { lang, t } = useLang();
+  const pres = getPresentation(c.id);
   const displayName = lang === "bn" ? fieldBn(c.id, "name", c.name) : c.name;
   const displayProblem =
     lang === "bn" ? fieldBn(c.id, "financialProblem", c.financialProblem) : c.financialProblem;
@@ -55,6 +57,12 @@ export function IdeaCard({ candidate: c, expanded, onToggle }: IdeaCardProps) {
           >
             {displayProblem}
           </p>
+          {pres && (
+            <p className={`text-xs text-accent-400 mt-2 ${lang === "bn" ? "font-bn" : ""}`}>
+              {lang === "bn" ? pres.role.bn : pres.role.en}
+              <span className="text-ink-300"> — {lang === "bn" ? pres.keyPoint.bn : pres.keyPoint.en}</span>
+            </p>
+          )}
           <div className="mt-2 grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px]">
             <Stat label={t("labels.layerB")} value={c.layerBCentre} />
             <Stat label={t("labels.layerARange")} value={c.layerBAndRange} />
@@ -79,9 +87,9 @@ export function IdeaCard({ candidate: c, expanded, onToggle }: IdeaCardProps) {
           )}
           <Link
             to={`/explorer/${c.id}`}
-            className="text-xs text-accent-400 hover:underline"
+            className="text-xs px-3 py-1.5 rounded border border-accent-500/50 bg-accent-500/10 text-accent-400 hover:bg-accent-500/20"
           >
-            {t("candidate.openExplorer")}
+            {lang === "bn" ? "পূর্ণ উপস্থাপনা →" : "Full presentation →"}
           </Link>
         </div>
       </header>

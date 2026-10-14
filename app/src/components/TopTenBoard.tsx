@@ -2,6 +2,7 @@ import type { Candidate } from "../data";
 import { GateBadge, DecisionBadge, PrototypeBadge } from "./Badges";
 import { useLang } from "./LanguageContext";
 import { fieldBn } from "../i18n/fieldHelpers";
+import { getPresentation } from "../data/presentation";
 
 // Visual overview of the ranked shortlist. Every candidate string shown here
 // (id, name, gate, decision, scores) comes straight from the candidate
@@ -64,7 +65,7 @@ export function TopTenBoard({
     chartNote: bn
       ? "বার = নথিভুক্ত রেঞ্জ, চিহ্ন = কেন্দ্র মান। এগুলো অভ্যন্তরীণ গবেষণা অনুমান, অফিসিয়াল বিচারের ফল নয়।"
       : "Bar = documented range, marker = centre value. These are internal research estimates, not official judging results.",
-    open: bn ? "বিস্তারিত দেখুন" : "View details",
+    open: bn ? "পূর্ণ উপস্থাপনা খুলুন" : "Open full presentation",
   };
 
   const renderTile = (c: Candidate, hero: boolean) => (
@@ -103,6 +104,18 @@ export function TopTenBoard({
       >
         {name(c)}
       </h3>
+      {(() => {
+        const pr = getPresentation(c.id);
+        if (!pr) return null;
+        return (
+          <>
+            <div className={`text-[11px] text-accent-400 mt-1 ${fontCls}`}>{bn ? pr.role.bn : pr.role.en}</div>
+            {hero && (
+              <p className={`text-xs text-ink-200 mt-2 leading-relaxed ${fontCls}`}>{bn ? pr.headline.bn : pr.headline.en}</p>
+            )}
+          </>
+        );
+      })()}
       <div className="flex flex-wrap gap-1.5 mt-3">
         <GateBadge gate={c.gate} />
         <DecisionBadge decision={c.decision} />

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { TOP_SHORTLIST } from "../data";
 import { IdeaCard } from "../components/IdeaCard";
 import { TopTenBoard } from "../components/TopTenBoard";
@@ -19,6 +19,7 @@ const FILTERS: { id: Filter; en: string; bn: string }[] = [
 
 export function ExplorerPage() {
   const { lang, t } = useLang();
+  const navigate = useNavigate();
   const [expandedId, setExpandedId] = useState<string | null>("HYBRID-008");
   const [filter, setFilter] = useState<Filter>("all");
   const [query, setQuery] = useState("");
@@ -55,18 +56,7 @@ export function ExplorerPage() {
       />
       <TopTenBoard
         candidates={TOP_SHORTLIST}
-        onSelect={(id) => {
-          setFilter("all");
-          setQuery("");
-          setExpandedId(id);
-          setTimeout(
-            () =>
-              document
-                .getElementById(`card-${id}`)
-                ?.scrollIntoView({ behavior: "smooth", block: "start" }),
-            50
-          );
-        }}
+        onSelect={(id) => navigate(`/explorer/${id}`)}
       />
       <Controls filter={filter} setFilter={setFilter} query={query} setQuery={setQuery} lang={lang} t={t} />
       <div className="space-y-3">

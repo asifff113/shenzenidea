@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
+import { TOP_SHORTLIST } from "../data";
+import { CandidateDeck } from "./CandidateDeck";
 import { RANKING_LAYER_B_BALANCED, TOP_THREE_VALIDATION, EXPERIMENTS } from "../data";
 import { useLang } from "../components/LanguageContext";
 import { fieldBn } from "../i18n/fieldHelpers";
@@ -15,6 +17,13 @@ interface Slide {
 }
 
 export function PresentationPage() {
+  const [params] = useSearchParams();
+  const cid = params.get("c");
+  if (cid) return <CandidateDeck id={cid} />;
+  return <OverviewDeck />;
+}
+
+function OverviewDeck() {
   const { lang, t } = useLang();
   const bn = lang === "bn";
   const [idx, setIdx] = useState(0);
@@ -170,6 +179,24 @@ export function PresentationPage() {
             </div>
           )}
         </article>
+        <section className="mt-6 rounded-xl border border-ink-800 bg-ink-900/40 p-4">
+          <h2 className="text-xs uppercase tracking-[0.16em] text-accent-400 mb-2">
+            {bn ? "একটি আইডিয়া একে একে উপস্থাপন করুন" : "Present one idea in depth"}
+          </h2>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
+            {TOP_SHORTLIST.map((c) => (
+              <li key={c.id}>
+                <Link
+                  to={`/presentation?c=${c.id}`}
+                  className="block rounded border border-ink-800 px-3 py-2 text-sm hover:border-accent-500/60"
+                >
+                  <span className="code-like text-accent-400 text-xs">#{c.rank} {c.id}</span>
+                  <span className={`block text-ink-100 ${bn ? "font-bn" : ""}`}>{bn ? fieldBn(c.id, "name", c.name) : c.name}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
         <div className="mt-4 flex items-center justify-between text-[11px] text-ink-300">
           <button onClick={() => setShowSource((v) => !v)} className="underline">
             {showSource ? t("presentation.hideSource") : t("presentation.showSource")}
