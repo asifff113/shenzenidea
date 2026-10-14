@@ -1,3 +1,4 @@
+// @vitest-environment jsdom
 // Inventory completeness tests.
 //
 // These tests verify the structural integrity of the 96-entry
@@ -83,7 +84,7 @@ describe("Library page", () => {
   it("renders the table with all 96 records", () => {
     render(withProviders(<LibraryPage />));
     // The library page shows a count. Use a tolerant match.
-    expect(screen.getByText(/96/)).toBeTruthy();
+    expect(screen.getAllByText(/96/).length).toBeGreaterThan(0);
   });
 });
 
